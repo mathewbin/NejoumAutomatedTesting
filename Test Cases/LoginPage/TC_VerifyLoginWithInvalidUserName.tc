@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_VerifyLoginWithInvalidUserName</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a75e2450-49a0-46a4-8a5e-67753235debb</testCaseGuid>
+</TestCaseEntity>

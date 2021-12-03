@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_VerifyLoginWithInvalidPwd</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ae572bbf-0c8a-4ab6-b97a-2a2660684164</testCaseGuid>
+</TestCaseEntity>
