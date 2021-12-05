@@ -17,17 +17,15 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('https://nejoumaljazeera.tech/Nejoum99/Authentication/login')
+WebUI.openBrowser(GlobalVariable.URL)
 
 WebUI.maximizeWindow()
 
-WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Email'), 'tester1@gmail.com')
-
-WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Password'), '88884444333')
-
 WebUI.click(findTestObject('LoginPage/Btn_Login'))
 
-WebUI.verifyElementText(findTestObject('LoginPage/Txt_BadCredentialError'), 'Invalid Username or Password')
+WebUI.verifyElementText(findTestObject('LoginPage/Txt_EmailRequired'), 'The Email field is required.')
+
+WebUI.verifyElementText(findTestObject('LoginPage/Txt_PasswordRequired'), 'The Password field is required.')
 
 WebUI.closeBrowser()
 

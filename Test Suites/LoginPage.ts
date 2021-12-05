@@ -16,23 +16,71 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/LoginPage/TC_VerifyLoginToApplication</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>705bbed9-58f1-4819-9798-871324fc72f8</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/LoginPage/TC_VerifyLoginWithCaseInsensitiveUserName</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>6a15df5a-5d7e-4b65-9765-c131861b1747</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/ValidUsers</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>6a15df5a-5d7e-4b65-9765-c131861b1747</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>email</value>
+         <variableId>6f4cd524-f142-4273-b206-b46aae650aac</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>6a15df5a-5d7e-4b65-9765-c131861b1747</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>password</value>
+         <variableId>dc594dff-d4ee-446a-b857-a17f24b343ec</variableId>
+      </variableLink>
    </testCaseLink>
    <testCaseLink>
       <guid>4ed659b6-1fba-4aae-8789-4c1cf9f1b53b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/LoginPage/TC_VerifyLoginWithInvalidPwd</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>53429146-a56a-4e40-b23c-0897b1e8bc6e</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/InvalidUsers</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>53429146-a56a-4e40-b23c-0897b1e8bc6e</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>email</value>
+         <variableId>c9b92dc6-a25c-43c8-8adb-8f1215b2b9bd</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>53429146-a56a-4e40-b23c-0897b1e8bc6e</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>password</value>
+         <variableId>79c0b2b5-90fe-44f9-ac85-6302ca7eade8</variableId>
+      </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>109b895d-b638-4f9d-bdcb-edefaf6da655</guid>
+      <guid>80c513a6-684b-4b26-9e0d-c5b98e0a469d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/LoginPage/TC_VerifyLoginWithInvalidUserName</testCaseId>
+      <testCaseId>Test Cases/LoginPage/TC_VerifyLoginWithoutData</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>0040a01b-9ade-4185-bebf-43a27611735e</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>86c55113-db83-41db-a67a-81430026ce93</variableId>
+      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>
