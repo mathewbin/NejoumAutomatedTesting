@@ -1,0 +1,26 @@
+{
+  "keywordFileContentHash": "65D2E948077D0CF447DDB43CEC7F125B",
+  "keywordClasses": [
+    {
+      "name": "com.nejoumalijazeera.StatementOfCarsArriving",
+      "keywordMethods": [
+        {
+          "name": "verifyRemainingColumnsForPaidStatus",
+          "parameters": [],
+          "javadoc": "/**\n\t * Verify amount 0.00 for Remaining column for Paid status \n\t */"
+        },
+        {
+          "name": "verifyRemainingColumnsForUnPaidStatus",
+          "parameters": [],
+          "javadoc": "/**\n\t * Verify amount 0.00 for Remaining column for Paid status\n\t */"
+        },
+        {
+          "name": "DismissUnnecessaryNotification",
+          "parameters": [],
+          "javadoc": "/**\n\t * Dismiss unnecessary notication  \n\t */"
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

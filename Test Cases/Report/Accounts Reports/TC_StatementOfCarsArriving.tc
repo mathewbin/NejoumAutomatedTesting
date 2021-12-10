@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>TC_VerifyLoginWithoutData</name>
+   <name>TC_StatementOfCarsArriving</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>2993fbd2-a67f-42ad-890d-08400398d472</testCaseGuid>
+   <testCaseGuid>956362b4-15fa-4d7e-8afa-c799b263ec0c</testCaseGuid>
 </TestCaseEntity>

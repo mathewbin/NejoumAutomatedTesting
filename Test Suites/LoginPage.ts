@@ -70,17 +70,5 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/LoginPage/TC_VerifyLoginWithoutData</testCaseId>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>0040a01b-9ade-4185-bebf-43a27611735e</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>86c55113-db83-41db-a67a-81430026ce93</variableId>
-      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>
