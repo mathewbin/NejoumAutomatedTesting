@@ -53,15 +53,3 @@ WebUI.click(findTestObject('Report/StatementOfCarsArriving/SearchButton'))
 
 CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.verifyRemainingColumnsForUnPaidStatus'()
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/ExcelButton'))
-
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/CSVButton'))
-
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/PDFButton'))
-
-WebUI.setText(findTestObject('Report/StatementOfCarsArriving/SearchInputTxt'), 'TOYOTA')
-
-WebUI.delay(10)
-
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.verifyTextinRows'('TOYOTA')
-

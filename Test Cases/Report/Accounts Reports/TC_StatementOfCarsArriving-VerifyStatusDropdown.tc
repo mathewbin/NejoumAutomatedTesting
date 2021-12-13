@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_StatementOfCarsArriving-VerifyStatusDropdown</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e88a0804-b9d5-4242-a146-8e245951043f</testCaseGuid>
+</TestCaseEntity>

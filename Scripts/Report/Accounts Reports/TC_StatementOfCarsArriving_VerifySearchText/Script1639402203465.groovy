@@ -21,9 +21,9 @@ WebUI.openBrowser(GlobalVariable.URL)
 
 WebUI.maximizeWindow()
 
-WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Email'), 'tester@gmail.com')
+WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Email'), GlobalVariable.UserName)
 
-WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Password'), '88884444333')
+WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Password'), GlobalVariable.Password)
 
 WebUI.click(findTestObject('LoginPage/Btn_Login'))
 
@@ -41,27 +41,11 @@ WebUI.click(findTestObject('HomePage/Account Report - Statement of cars arriving
 
 WebUI.selectOptionByIndex(findTestObject('Report/StatementOfCarsArriving/CustomerDropdown'), 3)
 
-WebUI.selectOptionByLabel(findTestObject('Report/StatementOfCarsArriving/StatusDropdown'), 'Paid', false)
-
 WebUI.click(findTestObject('Report/StatementOfCarsArriving/SearchButton'))
 
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.verifyRemainingColumnsForPaidStatus'()
-
-WebUI.selectOptionByLabel(findTestObject('Report/StatementOfCarsArriving/StatusDropdown'), 'UnPaid', false)
-
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/SearchButton'))
-
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.verifyRemainingColumnsForUnPaidStatus'()
-
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/ExcelButton'))
-
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/CSVButton'))
-
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/PDFButton'))
-
-WebUI.setText(findTestObject('Report/StatementOfCarsArriving/SearchInputTxt'), 'TOYOTA')
+WebUI.setText(findTestObject('Report/StatementOfCarsArriving/SearchInputTxt'), text)
 
 WebUI.delay(10)
 
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.verifyTextinRows'('TOYOTA')
+CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.verifyTextinRows'(text)
 

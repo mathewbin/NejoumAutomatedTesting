@@ -14,7 +14,7 @@
    <testCaseLink>
       <guid>67261699-ca29-42ee-affa-ed13a09fdb77</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/LoginPage/TC_VerifyLoginToApplication</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -41,7 +41,7 @@
    <testCaseLink>
       <guid>4ed659b6-1fba-4aae-8789-4c1cf9f1b53b</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/LoginPage/TC_VerifyLoginWithInvalidPwd</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -68,7 +68,7 @@
    <testCaseLink>
       <guid>80c513a6-684b-4b26-9e0d-c5b98e0a469d</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/LoginPage/TC_VerifyLoginWithoutData</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

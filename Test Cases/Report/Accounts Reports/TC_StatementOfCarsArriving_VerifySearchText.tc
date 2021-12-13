@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_StatementOfCarsArriving_VerifySearchText</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>390e184a-181a-48cf-a05e-798f4a57ed61</testCaseGuid>
+   <variable>
+      <defaultValue>'48557460'</defaultValue>
+      <description></description>
+      <id>bae2ef2a-55cf-4b0d-b6a2-74ee0155331c</id>
+      <masked>false</masked>
+      <name>text</name>
+   </variable>
+</TestCaseEntity>

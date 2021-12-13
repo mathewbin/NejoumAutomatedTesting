@@ -1,26 +1,41 @@
 {
-  "keywordFileContentHash": "65D2E948077D0CF447DDB43CEC7F125B",
+  "keywordFileContentHash": "B61605B90600B0552A9345BE9E77FE50",
   "keywordClasses": [
     {
       "name": "com.nejoumalijazeera.StatementOfCarsArriving",
       "keywordMethods": [
         {
           "name": "verifyRemainingColumnsForPaidStatus",
-          "parameters": [],
-          "javadoc": "/**\n\t * Verify amount 0.00 for Remaining column for Paid status \n\t */"
+          "parameters": []
         },
         {
           "name": "verifyRemainingColumnsForUnPaidStatus",
-          "parameters": [],
-          "javadoc": "/**\n\t * Verify amount 0.00 for Remaining column for Paid status\n\t */"
+          "parameters": []
         },
         {
           "name": "DismissUnnecessaryNotification",
-          "parameters": [],
-          "javadoc": "/**\n\t * Dismiss unnecessary notication  \n\t */"
+          "parameters": []
+        },
+        {
+          "name": "verifyTextinRows",
+          "parameters": [
+            {
+              "name": "text",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

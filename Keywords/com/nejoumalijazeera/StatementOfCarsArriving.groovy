@@ -4,15 +4,10 @@ import org.openqa.selenium.By
 import org.openqa.selenium.Keys
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
-import org.openqa.selenium.chrome.ChromeDriver
-import org.openqa.selenium.chrome.ChromeOptions
-import org.openqa.selenium.remote.CapabilityType
-import org.openqa.selenium.remote.DesiredCapabilities
 
-import com.kms.katalon.core.annotation.BeforeTestCase
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.configuration.RunConfiguration
-import com.kms.katalon.core.context.TestCaseContext
+import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.driver.DriverFactory
 
@@ -35,9 +30,9 @@ class StatementOfCarsArriving {
 			}
 		}
 		if(isSuccess)
-		KeywordUtil.markPassed("Remaining column value is verified successfully")
+			KeywordUtil.markPassed("Remaining column value is verified successfully")
 		else
-		KeywordUtil.markFailed("Remaining column is non-zero")
+			KeywordUtil.markFailed("Remaining column is non-zero")
 	}
 
 	/**
@@ -57,9 +52,9 @@ class StatementOfCarsArriving {
 			}
 		}
 		if(isSuccess)
-		KeywordUtil.markPassed("Remaining column value is verified successfully")
+			KeywordUtil.markPassed("Remaining column value is verified successfully")
 		else
-		KeywordUtil.markFailed("Remaining column is zero")
+			KeywordUtil.markFailed("Remaining column is zero")
 	}
 
 	/**
@@ -75,5 +70,28 @@ class StatementOfCarsArriving {
 		while(webDriver.findElements(By.xpath("//button[text()='OK']")).size()>0) {
 			webDriver.findElement(By.xpath("//button[text()='OK']")).click()
 		}
+	}
+
+	/**
+	 * Verify visibility of given text in all rows
+	 * 
+	 */
+	@Keyword
+	def verifyTextinRows(String text) {
+		KeywordUtil.logInfo("Verifying text in all available rows")
+		WebDriver webDriver = DriverFactory.getWebDriver()
+		List<WebElement> elements = webDriver.findElements(By.xpath("//tr[not(position() > last() -1)]"));
+		KeywordUtil.logInfo("Total rows"+elements.size())
+		boolean isSuccess=true;
+		for(int i=0;i<elements.size();i++) {
+			if(!elements[i].text.toLowerCase().contains(text.toLowerCase())) {
+				isSuccess=false;
+				break;
+			}
+		}
+		if(isSuccess)
+			KeywordUtil.markPassed("Remaining column value is verified successfully")
+		else
+			KeywordUtil.markFailed("Remaining column is non-zero")
 	}
 }
