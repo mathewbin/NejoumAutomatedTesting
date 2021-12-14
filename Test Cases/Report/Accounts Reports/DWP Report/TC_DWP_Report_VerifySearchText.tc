@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_DWP_Report_VerifySearchText</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7f0c161d-0374-4e99-b6ec-ce8139cabcb2</testCaseGuid>
+   <variable>
+      <defaultValue>'MSKU'</defaultValue>
+      <description></description>
+      <id>f48b42e1-5c6e-4fc1-82f4-1b6094fc575e</id>
+      <masked>false</masked>
+      <name>Text</name>
+   </variable>
+</TestCaseEntity>

@@ -6,15 +6,18 @@
       "keywordMethods": [
         {
           "name": "verifyRemainingColumnsForPaidStatus",
-          "parameters": []
+          "parameters": [],
+          "javadoc": "/**\n\t * Verify amount 0.00 for Remaining column for Paid status \n\t */"
         },
         {
           "name": "verifyRemainingColumnsForUnPaidStatus",
-          "parameters": []
+          "parameters": [],
+          "javadoc": "/**\n\t * Verify amount 0.00 for Remaining column for Paid status\n\t */"
         },
         {
           "name": "DismissUnnecessaryNotification",
-          "parameters": []
+          "parameters": [],
+          "javadoc": "/**\n\t * Dismiss unnecessary notication  \n\t */"
         },
         {
           "name": "verifyTextinRows",
@@ -32,10 +35,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\n\t * Verify visibility of given text in all rows\n\t * \n\t */"
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
