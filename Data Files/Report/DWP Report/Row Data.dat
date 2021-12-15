@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>Row Data</name>
+   <tag></tag>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>f3cf5036-1869-4fd3-a69d-ad013b326786</dataFileGUID>
+   <dataSourceUrl></dataSourceUrl>
+   <driver>DBData</driver>
+   <driverClassName></driverClassName>
+   <isInternalPath>false</isInternalPath>
+   <password></password>
+   <properties>
+      <entry>
+         <key>readAsString</key>
+         <value>true</value>
+      </entry>
+   </properties>
+   <query>SELECT `container`.container_number,`container`.size,
+`container_customs`.`dpw_cost`,`container`.create_date,CONCAT(`users`.full_name,'/',roles.`name`) as 'Created By' FROM `container` JOIN `container_customs` ON
+`container_customs`.`container_id` = `container`.`container_id` LEFT JOIN users ON
+users.user_id =`container`.create_by Left JOIN `roles` ON roles.`role_id`=users.`role_id`</query>
+   <secureUserAccount>false</secureUserAccount>
+   <sheetName></sheetName>
+   <user></user>
+   <usingGlobalDBSetting>true</usingGlobalDBSetting>
+</DataFileEntity>

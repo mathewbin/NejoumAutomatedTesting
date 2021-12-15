@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "D558078E8CAD640D70F63A9713D0C322",
+  "keywordFileContentHash": "99BBD9693FE1BDA8BF97559DCD984CAC",
   "keywordClasses": [
     {
       "name": "com.nejoumalijazeera.DwpReport",
@@ -33,8 +33,25 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify Show Entries\r\n\t */"
+          ]
+        },
+        {
+          "name": "verifyRowCount",
+          "parameters": [
+            {
+              "name": "testdata",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testdata.TestData",
+                "unresolvedClassName": "TestData",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
         },
         {
           "name": "verifyTextinRows",
@@ -52,11 +69,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify visibility of given text in all rows\r\n\t *\r\n\t */"
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_DWP_Report_VerifyRowCount</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5ca7895f-0d7d-4d89-a1ab-c18e98ba63d1</testCaseGuid>
+   <variable>
+      <defaultValue>'MSKU'</defaultValue>
+      <description></description>
+      <id>cdddaa38-9970-4081-97fd-c13c5bfecdd9</id>
+      <masked>false</masked>
+      <name>Text</name>
+   </variable>
+</TestCaseEntity>

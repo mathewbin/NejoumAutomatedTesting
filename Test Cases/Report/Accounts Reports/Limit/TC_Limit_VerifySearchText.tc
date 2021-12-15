@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_Limit_VerifySearchText</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>be7c362a-791a-40e2-9d58-0d67fc0ec3f5</testCaseGuid>
+   <variable>
+      <defaultValue>'cars'</defaultValue>
+      <description></description>
+      <id>b7ffb970-9b28-43db-aaa1-d761080df84e</id>
+      <masked>false</masked>
+      <name>Text</name>
+   </variable>
+</TestCaseEntity>

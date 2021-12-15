@@ -1,0 +1,29 @@
+{
+  "keywordFileContentHash": "F954B97A5CF428B5185ADE774888CA50",
+  "keywordClasses": [
+    {
+      "name": "com.nejoumalijazeera.Limit",
+      "keywordMethods": [
+        {
+          "name": "verifyRowCount",
+          "parameters": [
+            {
+              "name": "testdata",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testdata.TestData",
+                "unresolvedClassName": "TestData",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "javadocParsed": false
+}

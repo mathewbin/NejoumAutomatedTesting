@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>Row Data</name>
+   <tag></tag>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>b6ab39ed-03bb-49c2-9406-8fc34e70fe9f</dataFileGUID>
+   <dataSourceUrl></dataSourceUrl>
+   <driver>DBData</driver>
+   <driverClassName></driverClassName>
+   <isInternalPath>false</isInternalPath>
+   <password></password>
+   <query>SELECT
+`customer`.membership_id,CONCAT(`customer`.full_name,`customer`.full_name_ar)
+name,`customer`.customer_type, `customer_group`.`title`, SUM(Debit) - SUM(Credit) Debitt
+,`customer_limit`.`limitation_amount` As `limit`,SUM(Debit) - SUM(Credit) -
+`customer_limit`.`limitation_amount` Balance FROM `customer`
+LEFT JOIN `customer_group` ON `customer`.`customer_group_id`=`customer_group`.`id`
+LEFT JOIN `customer_limit` ON `customer`.`customer_id`=`customer_limit`.`customer_id`
+INNER JOIN accounttransaction on accounttransaction.AccountID = customer.account_id
+AND accounttransaction.deleted = '0' GROUP BY customer.account_id HAVING Debitt >
+`limit` ORDER BY `customer_limit`.`limitation_amount` DESC;</query>
+   <secureUserAccount>false</secureUserAccount>
+   <sheetName></sheetName>
+   <user></user>
+   <usingGlobalDBSetting>true</usingGlobalDBSetting>
+</DataFileEntity>
