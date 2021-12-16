@@ -7,9 +7,9 @@ import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.configuration.RunConfiguration
-import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.driver.DriverFactory
+
 
 
 class StatementOfCarsArriving {
@@ -69,6 +69,7 @@ class StatementOfCarsArriving {
 		webDriver.findElement(By.tagName("body")).sendKeys(Keys.ESCAPE)
 		while(webDriver.findElements(By.xpath("//button[text()='OK']")).size()>0) {
 			webDriver.findElement(By.xpath("//button[text()='OK']")).click()
+			Thread.sleep(2000)
 		}
 	}
 

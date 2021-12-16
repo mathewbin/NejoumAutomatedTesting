@@ -14,7 +14,7 @@
    <testCaseLink>
       <guid>93cd9066-6483-4bfa-8bcd-7bc4e61b3315</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Report/Accounts Reports/Statement Of Cars Arriving/TC_StatementOfCarsArriving_VerifySearchText</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -35,7 +35,13 @@
    <testCaseLink>
       <guid>2d788057-3d35-45a5-956b-df6ebf5cca5b</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Report/Accounts Reports/Statement Of Cars Arriving/TC_StatementOfCarsArriving-VerifyStatusDropdown</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c115db28-2b61-4d81-b365-6ba01f2a39e4</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Report/Accounts Reports/Statement Of Cars Arriving/TC_StatementOfCarsArriving-VerifyDownload</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

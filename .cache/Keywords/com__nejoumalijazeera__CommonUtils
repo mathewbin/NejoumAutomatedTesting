@@ -1,18 +1,18 @@
 {
-  "keywordFileContentHash": "F954B97A5CF428B5185ADE774888CA50",
+  "keywordFileContentHash": "B96C3B58DE00D3378AC2515237E0798D",
   "keywordClasses": [
     {
-      "name": "com.nejoumalijazeera.Limit",
+      "name": "com.nejoumalijazeera.CommonUtils",
       "keywordMethods": [
         {
-          "name": "verifyRowCount",
+          "name": "VerifyFileDownloaded",
           "parameters": [
             {
-              "name": "testdata",
+              "name": "fileName",
               "initialExpression": "",
               "type": {
-                "fullClassName": "com.kms.katalon.core.testdata.TestData",
-                "unresolvedClassName": "TestData",
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
                 "isArray": false,
                 "isGnericsPlaceHolder": false,
                 "hasImmutableClassName": false,
@@ -20,11 +20,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify TestData\r\n\t */"
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

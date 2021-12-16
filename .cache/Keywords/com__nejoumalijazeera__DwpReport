@@ -33,7 +33,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify Show Entries\r\n\t */"
         },
         {
           "name": "verifyRowCount",
@@ -51,7 +52,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify TestData\r\n\t */"
         },
         {
           "name": "verifyTextinRows",
@@ -69,10 +71,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify visibility of given text in all rows\r\n\t *\r\n\t */"
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
