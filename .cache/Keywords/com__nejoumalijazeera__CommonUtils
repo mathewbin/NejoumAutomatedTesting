@@ -20,10 +20,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify File Existence\r\n\t * @param table File Name\r\n\t */"
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

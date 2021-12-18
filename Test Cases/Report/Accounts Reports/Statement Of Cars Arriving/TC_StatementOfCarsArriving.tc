@@ -5,4 +5,18 @@
    <tag></tag>
    <comment></comment>
    <testCaseGuid>956362b4-15fa-4d7e-8afa-c799b263ec0c</testCaseGuid>
+   <variable>
+      <defaultValue>'12012021'</defaultValue>
+      <description></description>
+      <id>597b0bb0-67a0-4ebe-b11e-a8ccdd4f8d74</id>
+      <masked>false</masked>
+      <name>FromDate</name>
+   </variable>
+   <variable>
+      <defaultValue>'12312021'</defaultValue>
+      <description></description>
+      <id>faab0cbc-390e-45f9-a094-2d73027d0f83</id>
+      <masked>false</masked>
+      <name>ToDate</name>
+   </variable>
 </TestCaseEntity>
