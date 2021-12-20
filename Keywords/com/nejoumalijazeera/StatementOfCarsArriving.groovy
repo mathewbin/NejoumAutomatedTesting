@@ -1,5 +1,7 @@
 package com.nejoumalijazeera
 
+import java.text.NumberFormat
+
 import org.openqa.selenium.By
 import org.openqa.selenium.Keys
 import org.openqa.selenium.WebDriver
@@ -9,6 +11,7 @@ import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.driver.DriverFactory
+
 
 
 
@@ -33,6 +36,53 @@ class StatementOfCarsArriving {
 			KeywordUtil.markPassed("Remaining column value is verified successfully")
 		else
 			KeywordUtil.markFailed("Remaining column is non-zero")
+	}
+
+	/**
+	 * Verify Total for all columns
+	 */
+	@Keyword
+	def verifyColumnsTotal() {
+		KeywordUtil.logInfo("Verifying total")
+		String[] columns=[
+			"Towing",
+			"Shipping",
+			"Clearance",
+			"Custom",
+			"Extra",
+			"Additional",
+			"Recovery",
+			"Towing Fines",
+			"Vat",
+			"Shipping Commission",
+			"Discount",
+			"BOS",
+			"Storage Old",
+			"Other",
+			"Total",
+			"Storage New",
+			"Forklift",
+			"Paid",
+			"Remaining",
+			"Car Remaining",
+			"Final"
+		]
+		NumberFormat format = NumberFormat.getCurrencyInstance();
+		WebDriver webDriver = DriverFactory.getWebDriver()
+		Number number =null;
+		for(int i=5;i<=25;i++) {
+			List<WebElement> elements = webDriver.findElements(By.xpath("//td["+i+"]"))
+			Float sum=0.00;
+			for(int j=0;j<elements.size()-1;j++) {
+				sum=sum+Float.parseFloat(elements[j].getText().replace(",",""))
+			}
+			if(!Float.parseFloat(elements[elements.size()-1].getText().replace(",","")).equals(Float.parseFloat(sum.toString()))) {
+				KeywordUtil.markFailed("Total is not matched for column "+columns[i-5]+". Actual : "+elements[elements.size()-1].getText()+" Expected : "+sum)
+			}
+			else {
+				KeywordUtil.logInfo("Total "+elements[elements.size()-1].getText()+" is matched for Column : "+columns[i-5]);
+			}
+		}
 	}
 
 	/**

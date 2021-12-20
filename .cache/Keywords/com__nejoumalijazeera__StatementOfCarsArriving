@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "3FF082B2ADCDE2D3DB37A40842D76CF6",
+  "keywordFileContentHash": "A8F34A1B022B9F202C81D5F7B8531560",
   "keywordClasses": [
     {
       "name": "com.nejoumalijazeera.StatementOfCarsArriving",
@@ -8,6 +8,11 @@
           "name": "verifyRemainingColumnsForPaidStatus",
           "parameters": [],
           "javadoc": "/**\n\t * Verify amount 0.00 for Remaining column for Paid status \n\t */"
+        },
+        {
+          "name": "verifyColumnsTotal",
+          "parameters": [],
+          "javadoc": "/**\n\t * Verify Total for all columns\n\t */"
         },
         {
           "name": "verifyRemainingColumnsForUnPaidStatus",
