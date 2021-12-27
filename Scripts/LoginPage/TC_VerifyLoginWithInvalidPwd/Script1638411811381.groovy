@@ -17,10 +17,6 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser(GlobalVariable.URL)
-
-WebUI.maximizeWindow()
-
 WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Email'), email)
 
 WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Password'), password)
@@ -28,6 +24,4 @@ WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Password'), password)
 WebUI.click(findTestObject('LoginPage/Btn_Login'))
 
 WebUI.verifyElementText(findTestObject('LoginPage/Txt_BadCredentialError'), 'Invalid Username or Password')
-
-WebUI.closeBrowser()
 

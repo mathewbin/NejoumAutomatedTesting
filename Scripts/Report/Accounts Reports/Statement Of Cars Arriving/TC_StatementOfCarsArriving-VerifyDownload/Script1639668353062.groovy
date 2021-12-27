@@ -51,5 +51,5 @@ CustomKeywords.'com.nejoumalijazeera.CommonUtils.VerifyFileDownloaded'('Customer
 
 CustomKeywords.'com.nejoumalijazeera.CommonUtils.VerifyFileDownloaded'('Customer Car Details!.pdf')
 
-CustomKeywords.'com.nejoumalijazeera.CommonUtils.VerifyFileDownloaded'('Customer Car Details!.xlsx')
+CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.verifyTextFileData'('Customer Car Details!.xlsx')
 

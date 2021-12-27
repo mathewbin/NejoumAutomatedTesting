@@ -7,6 +7,7 @@ import com.kms.katalon.core.annotation.AfterTestCase
 import com.kms.katalon.core.annotation.BeforeTestCase
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.context.TestCaseContext
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.driver.DriverFactory
 
 import internal.GlobalVariable
@@ -19,6 +20,7 @@ class InitialTestListener {
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
 			//Set Browser Capabilities.
+		KeywordUtil.logInfo("Verifying sampleBeforeTestCase")
 	String ProjectDirectory=RunConfiguration.getProjectDir()
 	String DownloadFolderPath=ProjectDirectory+"/Download/"
 	DownloadFolderPath=DownloadFolderPath.replace('/', '\\')
@@ -40,6 +42,6 @@ class InitialTestListener {
 	
 	@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
-		//DriverFactory.closeWebDriver();
+		DriverFactory.closeWebDriver();
 	}
 }

@@ -17,15 +17,9 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser(GlobalVariable.URL)
-
-WebUI.maximizeWindow()
-
 WebUI.click(findTestObject('LoginPage/Btn_Login'))
 
 WebUI.verifyElementText(findTestObject('LoginPage/Txt_EmailRequired'), 'The Email field is required.')
 
 WebUI.verifyElementText(findTestObject('LoginPage/Txt_PasswordRequired'), 'The Password field is required.')
-
-WebUI.closeBrowser()
 

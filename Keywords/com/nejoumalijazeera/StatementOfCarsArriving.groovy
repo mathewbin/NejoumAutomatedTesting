@@ -1,7 +1,13 @@
 package com.nejoumalijazeera
 
+import java.awt.geom.Arc2D.Double
 import java.text.NumberFormat
 
+import org.apache.poi.ss.usermodel.Cell
+import org.apache.poi.ss.usermodel.Row
+import org.apache.poi.xssf.usermodel.XSSFRow
+import org.apache.poi.xssf.usermodel.XSSFSheet
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.openqa.selenium.By
 import org.openqa.selenium.Keys
 import org.openqa.selenium.WebDriver
@@ -113,7 +119,6 @@ class StatementOfCarsArriving {
 	@Keyword
 	def DismissUnnecessaryNotification() {
 		KeywordUtil.logInfo("Dismissing unnecessary notification")
-		RunConfiguration.setWebDriverPreferencesProperty("download.default_directory", "C:\\Users\\somkant.shrivastava\\git\\NejoumAutomatedTesting\\Download");
 		WebDriver webDriver = DriverFactory.getWebDriver()
 
 		webDriver.findElement(By.tagName("body")).sendKeys(Keys.ESCAPE)
@@ -144,5 +149,69 @@ class StatementOfCarsArriving {
 			KeywordUtil.markPassed("Remaining column value is verified successfully")
 		else
 			KeywordUtil.markFailed("Remaining column is non-zero")
+	}
+
+	/**
+	 * Verify Excel File Data
+	 *
+	 */
+	@Keyword
+	def verifyTextFileData(String fileName) {
+		KeywordUtil.logInfo("Verifying excel file data")
+		WebDriver webDriver = DriverFactory.getWebDriver()
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+
+		int expTotalColCount=webDriver.findElements(By.tagName("th")).size()
+		int expTotalRowCount=webDriver.findElements(By.tagName("tr")).size()
+
+		String ProjectDirectory=RunConfiguration.getProjectDir()
+		String excelFileLocation=ProjectDirectory+"/Download/"+fileName
+		excelFileLocation=excelFileLocation.replace('/', '\\')
+		FileInputStream fis=new FileInputStream(new File(excelFileLocation));
+		XSSFWorkbook wb = new XSSFWorkbook(fis);
+		XSSFSheet sheet = wb.getSheetAt(0);
+		int actTotalRow=sheet.getLastRowNum()+1;
+		if(expTotalRowCount!=actTotalRow)
+			KeywordUtil.markFailed("Row count is not matched in Excel sheet. Actual : "+actTotalRow+" Expected : "+expTotalRowCount);
+		XSSFRow row = sheet.getRow(0);
+		int actTotalColCount=row.getLastCellNum();
+		if(expTotalColCount!=actTotalColCount)
+			KeywordUtil.markFailed("Column count is not matched in Excel sheet. Actual : "+actTotalColCount+" Expected : "+expTotalColCount);
+		Iterator<Row> itr = sheet.iterator();
+		int rowCounter=0;
+		while (itr.hasNext()) {
+			int colCounter=0;
+			row = itr.next();
+			Iterator<Cell> cellIterator = row.cellIterator();
+			while (cellIterator.hasNext()) {
+				Cell cell = cellIterator.next();
+				String expectedtext="";
+				String actualText="";
+				switch (cell.getCellType()) {
+					case Cell.CELL_TYPE_STRING:
+						actualText=cell.getStringCellValue().trim()
+						break;
+					case Cell.CELL_TYPE_NUMERIC:
+						double d=  cell.getNumericCellValue()
+						actualText=d<1000?((int)d).toString():formatter.format(d).replace("\$", "")
+						break;
+				}
+				if(rowCounter==0) {
+					expectedtext=webDriver.findElement(By.tagName("tr")).findElements(By.tagName("th")).get(colCounter).text.trim();
+				}
+				else {
+					expectedtext=webDriver.findElements(By.tagName("tr")).get(rowCounter).findElements(By.tagName("td")).get(colCounter).text.replace("\n","").trim();
+					if(!expectedtext.contains(",") && (colCounter==0 || (colCounter>3 && colCounter<25))) {
+						float d=  Float.parseFloat(expectedtext)
+						expectedtext=d<1000?((int)d).toString():d
+					}
+				}
+				if(!expectedtext.equals(actualText))
+					KeywordUtil.markFailed("Data is not matched in excel sheet. Expected : "+expectedtext+" Actual : "+actualText+" Index : ["+rowCounter+","+colCounter+"]");
+				colCounter++;
+			}
+			KeywordUtil.logInfo("Row # "+(rowCounter+1)+" is verified successfully")
+			rowCounter++;
+		}
 	}
 }
