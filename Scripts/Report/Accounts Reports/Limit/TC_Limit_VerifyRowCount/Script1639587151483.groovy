@@ -17,10 +17,6 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser(GlobalVariable.URL)
-
-WebUI.maximizeWindow()
-
 WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Email'), GlobalVariable.UserName)
 
 WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Password'), GlobalVariable.Password)
@@ -40,6 +36,4 @@ WebUI.click(findTestObject('HomePage/Report-Account Report'))
 WebUI.click(findTestObject('HomePage/Account Report - Limit'))
 
 CustomKeywords.'com.nejoumalijazeera.Limit.verifyRowCount'(findTestData('Report/Limit/Row Data'))
-
-WebUI.closeBrowser()
 

@@ -17,10 +17,6 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser(GlobalVariable.URL)
-
-WebUI.maximizeWindow()
-
 WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Email'), GlobalVariable.UserName)
 
 WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Password'), GlobalVariable.Password)
@@ -42,6 +38,4 @@ WebUI.click(findTestObject('HomePage/Account Report - DWP_Report'))
 WebUI.selectOptionByValue(findTestObject('Report/DWPReport/ShowDropdown'), RowCount, false)
 
 CustomKeywords.'com.nejoumalijazeera.DwpReport.verifyShowEntry'(findTestObject('Report/DWPReport/ShowDropdown'), RowCount)
-
-WebUI.closeBrowser()
 
