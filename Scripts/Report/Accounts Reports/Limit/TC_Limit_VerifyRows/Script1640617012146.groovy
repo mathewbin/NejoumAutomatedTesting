@@ -35,5 +35,7 @@ WebUI.click(findTestObject('HomePage/Report-Account Report'))
 
 WebUI.click(findTestObject('HomePage/Account Report - Limit'))
 
+WebUI.selectOptionByValue(findTestObject('Report/Limit/ShowDropdown'), '100', false)
+
 CustomKeywords.'com.nejoumalijazeera.Limit.verifyRowCount'(findTestData('Report/Limit/Row Data'))
 
