@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>TC_DWP_Report_VerifyRowCount</name>
+   <name>TC_DWP_Report_VerifyRowData</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>5ca7895f-0d7d-4d89-a1ab-c18e98ba63d1</testCaseGuid>

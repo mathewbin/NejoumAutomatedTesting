@@ -1,16 +1,26 @@
 package com.nejoumalijazeera
 
+import java.text.NumberFormat
+
+import org.apache.poi.ss.usermodel.Cell
+import org.apache.poi.ss.usermodel.Row
+import org.apache.poi.xssf.usermodel.XSSFRow
+import org.apache.poi.xssf.usermodel.XSSFSheet
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.ui.Select
 
 import com.kms.katalon.core.annotation.Keyword
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.driver.DriverFactory
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+
 
 
 
@@ -27,7 +37,7 @@ public class DwpReport {
 		KeywordUtil.logInfo("Verifying row count as per selection")
 		WebDriver webDriver = DriverFactory.getWebDriver()
 		List<WebElement> elements = webDriver.findElements(By.xpath("//td/parent::tr"))
-		WebElement element = WebUiBuiltInKeywords.findWebElement(showDropdown);
+		WebElement element = WebUI.findWebElement(showDropdown);
 		Select selectDropdown=new Select(element);
 		if(!selectDropdown.firstSelectedOption.text.equals(rowCount))
 			KeywordUtil.markFailed("Expected row count is not matched.")
@@ -41,16 +51,40 @@ public class DwpReport {
 	 * Verify TestData
 	 */
 	@Keyword
-	def verifyRowCount(TestData testdata) {
-		KeywordUtil.logInfo("Verifying test data")
-		int expectedRowNumbers=testdata.getRowNumbers();
+	def verifyRowData(TestData testdata) {
+		int expectedRowNumbers=testdata.getRowNumbers()
+		int expectedColNumbers=testdata.getColumnNumbers()
 		WebDriver webDriver = DriverFactory.getWebDriver()
-		List<WebElement> elements = webDriver.findElements(By.xpath("//td/parent::tr"))
-		int actualRowNumbers=elements.size();
+		//Verifying Row Count
+		String temp=webDriver.findElement(By.id("example23_info")).getText().replace("Showing 1 to 200 of ", "").replace(" entries", "").replace(",", "");
+		int actualRowNumbers=Integer.parseInt(temp);
 		if(actualRowNumbers!=expectedRowNumbers)
 			KeywordUtil.markFailed("Row count is not matched. Actual : "+actualRowNumbers+" Expected : "+expectedRowNumbers);
 		else
 			KeywordUtil.markPassed("Row count is matched in front end and back end")
+		//Verifying row data
+		KeywordUtil.logInfo("Total row # "+expectedRowNumbers)
+		int i=1;
+		for(int rowCounter=1;rowCounter<=expectedRowNumbers;rowCounter++) {
+			KeywordUtil.logInfo("Verifying test data for row # "+rowCounter)
+			String actualData=webDriver.findElement(By.xpath("//tr["+i+"]/td[1]")).getText().trim().replace("\n", "")
+			int actRowNumber=Integer.parseInt(actualData)
+			if(actRowNumber!=rowCounter)
+				KeywordUtil.markFailed("Row Number is not matched. Expected : "+rowCounter+" Actual : "+actRowNumber)
+			for(int j=1;j<=expectedColNumbers;j++) {
+				String expectedData=testdata.getValue(j, i).trim()
+				expectedData=expectedData.isEmpty()?"/":expectedData
+				actualData=webDriver.findElement(By.xpath("//tr["+i+"]/td["+(j+1)+"]")).getText().trim()
+				if(!expectedData.equals(actualData))
+					KeywordUtil.markFailed("Data is not matched in excel sheet. Expected : "+expectedData+" Actual : "+actualData+" Index : ["+i+","+j+"]")
+			}
+			if(i==100) {
+				webDriver.findElement(By.linkText("Next")).click()
+				i=1;
+				WebUI.delay(2)
+			}
+			i++
+		}
 	}
 
 	/**
@@ -74,5 +108,69 @@ public class DwpReport {
 			KeywordUtil.markPassed("Text match is verified successfully")
 		else
 			KeywordUtil.markFailed("Text doesn't match")
+	}
+	
+	/**
+	 * Verify Excel File Data
+	 *
+	 */
+	@Keyword
+	def verifyTextFileData(String fileName) {
+		KeywordUtil.logInfo("Verifying excel file data")
+		WebDriver webDriver = DriverFactory.getWebDriver()
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+
+		int expTotalColCount=webDriver.findElements(By.tagName("th")).size()
+		int expTotalRowCount=webDriver.findElements(By.tagName("tr")).size()
+
+		String ProjectDirectory=RunConfiguration.getProjectDir()
+		String excelFileLocation=ProjectDirectory+"/Download/"+fileName
+		excelFileLocation=excelFileLocation.replace('/', '\\')
+		FileInputStream fis=new FileInputStream(new File(excelFileLocation));
+		XSSFWorkbook wb = new XSSFWorkbook(fis);
+		XSSFSheet sheet = wb.getSheetAt(0);
+		int actTotalRow=sheet.getLastRowNum()+1;
+		if(expTotalRowCount!=actTotalRow)
+			KeywordUtil.markFailed("Row count is not matched in Excel sheet. Actual : "+actTotalRow+" Expected : "+expTotalRowCount);
+		XSSFRow row = sheet.getRow(0);
+		int actTotalColCount=row.getLastCellNum();
+		if(expTotalColCount!=actTotalColCount)
+			KeywordUtil.markFailed("Column count is not matched in Excel sheet. Actual : "+actTotalColCount+" Expected : "+expTotalColCount);
+		Iterator<Row> itr = sheet.iterator();
+		int rowCounter=0;
+		while (itr.hasNext()) {
+			int colCounter=0;
+			row = itr.next();
+			Iterator<Cell> cellIterator = row.cellIterator();
+			while (cellIterator.hasNext()) {
+				Cell cell = cellIterator.next();
+				String expectedtext="";
+				String actualText="";
+				switch (cell.getCellType()) {
+					case Cell.CELL_TYPE_STRING:
+						actualText=cell.getStringCellValue().trim()
+						break;
+					case Cell.CELL_TYPE_NUMERIC:
+						double d=  cell.getNumericCellValue()
+						actualText=d<1000?((int)d).toString():formatter.format(d)
+						break;
+				}
+				if(rowCounter==0) {
+					expectedtext=webDriver.findElement(By.tagName("tr")).findElements(By.tagName("th")).get(colCounter).text.trim();
+				}
+				else {
+					expectedtext=webDriver.findElements(By.tagName("tr")).get(rowCounter).findElements(By.tagName("td")).get(colCounter).text.replace("\n","").trim();
+					if(!expectedtext.contains(",") && (colCounter==0 || (colCounter>3 && colCounter<25))) {
+						float d=  Float.parseFloat(expectedtext)
+						expectedtext=d<1000?((int)d).toString():d
+					}
+				}
+				if(!expectedtext.equals(actualText))
+					KeywordUtil.markFailed("Data is not matched in excel sheet. Expected : "+expectedtext+" Actual : "+actualText+" Index : ["+rowCounter+","+colCounter+"]");
+				colCounter++;
+			}
+			KeywordUtil.logInfo("Row # "+(rowCounter+1)+" is verified successfully")
+			rowCounter++;
+		}
 	}
 }

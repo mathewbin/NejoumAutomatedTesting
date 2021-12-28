@@ -20,17 +20,17 @@ public class Limit {
 	 * Verify TestData
 	 */
 	@Keyword
-	def verifyRowCount(TestData testdata) {
+	def verifyRowData(TestData testdata) {
 		int expectedRowNumbers=testdata.getRowNumbers()
 		int expectedColNumbers=testdata.getColumnNumbers()
 		WebDriver webDriver = DriverFactory.getWebDriver()
 		//Verifying Row Count
 		String temp=webDriver.findElement(By.id("myTable_info")).getText().replace("Showing 1 to 10 of ", "").replace(" entries", "");
-		 int actualRowNumbers=Integer.parseInt(temp);
-		 if(actualRowNumbers!=expectedRowNumbers)
-		 KeywordUtil.markFailed("Row count is not matched. Actual : "+actualRowNumbers+" Expected : "+expectedRowNumbers);
-		 else
-		 KeywordUtil.markPassed("Row count is matched in front end and back end")
+		int actualRowNumbers=Integer.parseInt(temp);
+		if(actualRowNumbers!=expectedRowNumbers)
+			KeywordUtil.markFailed("Row count is not matched. Actual : "+actualRowNumbers+" Expected : "+expectedRowNumbers);
+		else
+			KeywordUtil.markPassed("Row count is matched in front end and back end")
 		//Verifying row data
 		KeywordUtil.logInfo("Total row # "+expectedRowNumbers)
 		int i=1;

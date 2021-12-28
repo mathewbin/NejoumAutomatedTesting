@@ -35,9 +35,11 @@ WebUI.click(findTestObject('HomePage/Report-Account Report'))
 
 WebUI.click(findTestObject('HomePage/Account Report - DWP_Report'))
 
-WebUI.selectOptionByValue(findTestObject('Report/DWPReport/ShowDropdown'), '-1', false)
+WebUI.delay(5)
+
+WebUI.selectOptionByValue(findTestObject('Report/DWPReport/ShowDropdown'), '200', false)
 
 WebUI.delay(5)
 
-CustomKeywords.'com.nejoumalijazeera.DwpReport.verifyRowCount'(findTestData('Report/DWP Report/Row Data'))
+CustomKeywords.'com.nejoumalijazeera.DwpReport.verifyRowData'(findTestData('Report/DWP Report/Row Data'))
 

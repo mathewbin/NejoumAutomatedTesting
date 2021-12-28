@@ -1,28 +1,24 @@
 {
-  "keywordFileContentHash": "DA9F085260F54522F729AF599D4276FE",
+  "keywordFileContentHash": "8648A9E8A5F950F3E993594B91192CD9",
   "keywordClasses": [
     {
       "name": "com.nejoumalijazeera.StatementOfCarsArriving",
       "keywordMethods": [
         {
           "name": "verifyRemainingColumnsForPaidStatus",
-          "parameters": [],
-          "javadoc": "/**\n\t * Verify amount 0.00 for Remaining column for Paid status \n\t */"
+          "parameters": []
         },
         {
           "name": "verifyColumnsTotal",
-          "parameters": [],
-          "javadoc": "/**\n\t * Verify Total for all columns\n\t */"
+          "parameters": []
         },
         {
           "name": "verifyRemainingColumnsForUnPaidStatus",
-          "parameters": [],
-          "javadoc": "/**\n\t * Verify amount 0.00 for Remaining column for Paid status\n\t */"
+          "parameters": []
         },
         {
           "name": "DismissUnnecessaryNotification",
-          "parameters": [],
-          "javadoc": "/**\n\t * Dismiss unnecessary notication  \n\t */"
+          "parameters": []
         },
         {
           "name": "verifyTextinRows",
@@ -40,8 +36,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\n\t * Verify visibility of given text in all rows\n\t * \n\t */"
+          ]
         },
         {
           "name": "verifyTextFileData",
@@ -59,11 +54,14 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\n\t * Verify Excel File Data\n\t *\n\t */"
+          ]
+        },
+        {
+          "name": "VerifyCopyButton",
+          "parameters": []
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

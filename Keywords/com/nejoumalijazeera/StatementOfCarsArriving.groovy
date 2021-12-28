@@ -1,6 +1,11 @@
 package com.nejoumalijazeera
 
-import java.awt.geom.Arc2D.Double
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.StringSelection
 import java.text.NumberFormat
 
 import org.apache.poi.ss.usermodel.Cell
@@ -17,9 +22,7 @@ import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.driver.DriverFactory
-
-
-
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 class StatementOfCarsArriving {
 	/**
@@ -213,5 +216,26 @@ class StatementOfCarsArriving {
 			KeywordUtil.logInfo("Row # "+(rowCounter+1)+" is verified successfully")
 			rowCounter++;
 		}
+	}
+
+	/**
+	 * Verify Copy Button
+	 */
+	@Keyword
+	def VerifyCopyButton() {
+		KeywordUtil.logInfo("Verifying Copy Button")
+		StringSelection stringSelection = new StringSelection("");
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(
+				stringSelection, null);
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		Clipboard clipboard = toolkit.getSystemClipboard();
+		String resultBeforeClick = (String) clipboard.getData(DataFlavor.stringFlavor);
+		if(!resultBeforeClick.isEmpty())
+		KeywordUtil.markFailed("Clipboard text is not yet cleaned"+resultBeforeClick)
+		WebUI.click(findTestObject('Report/StatementOfCarsArriving/CopyButton'))
+		WebUI.delay(1)
+		String resultAfterClick = (String) clipboard.getData(DataFlavor.stringFlavor);
+		if(resultBeforeClick.equals(resultAfterClick))
+			KeywordUtil.markFailed("Unexpected clipboard text is found"+resultBeforeClick)
 	}
 }

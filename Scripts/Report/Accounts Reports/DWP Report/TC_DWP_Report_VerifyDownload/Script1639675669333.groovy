@@ -41,9 +41,13 @@ WebUI.click(findTestObject('Report/DWPReport/CSVButton'))
 
 WebUI.click(findTestObject('Report/DWPReport/PDFButton'))
 
+WebUI.click(findTestObject('Report/StatementOfCarsArriving/ExcelButton'))
+
 WebUI.delay(10)
 
 CustomKeywords.'com.nejoumalijazeera.CommonUtils.VerifyFileDownloaded'('DPW Report.csv')
 
 CustomKeywords.'com.nejoumalijazeera.CommonUtils.VerifyFileDownloaded'('DPW Report.pdf')
+
+CustomKeywords.'com.nejoumalijazeera.DwpReport.verifyTextFileData'('DPW Report.xlsx')
 

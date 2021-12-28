@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PDFButton</name>
+   <name>PrintButton</name>
    <tag></tag>
-   <elementGuidId>b63c335b-c193-4925-a8bc-7852192a61ee</elementGuidId>
+   <elementGuidId>26fd3bc0-f890-4faa-b2b1-c5dbc979d431</elementGuidId>
    <selectorCollection>
       <entry>
          <key>CSS</key>
-         <value>a.buttons-pdf</value>
+         <value>a.buttons-print</value>
       </entry>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[text()='CSV']/parent::a</value>
+         <value>//span[text()='PDF']/parent::a</value>
       </entry>
    </selectorCollection>
    <selectorMethod>CSS</selectorMethod>

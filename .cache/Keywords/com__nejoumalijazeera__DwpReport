@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "875B28DE8480C43A9AD14745F0187453",
+  "keywordFileContentHash": "0820DD38908921F8EEFA886A98B44307",
   "keywordClasses": [
     {
       "name": "com.nejoumalijazeera.DwpReport",
@@ -33,11 +33,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify Show Entries\r\n\t */"
+          ]
         },
         {
-          "name": "verifyRowCount",
+          "name": "verifyRowData",
           "parameters": [
             {
               "name": "testdata",
@@ -52,8 +51,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify TestData\r\n\t */"
+          ]
         },
         {
           "name": "verifyTextinRows",
@@ -71,11 +69,28 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify visibility of given text in all rows\r\n\t *\r\n\t */"
+          ]
+        },
+        {
+          "name": "verifyTextFileData",
+          "parameters": [
+            {
+              "name": "fileName",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

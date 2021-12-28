@@ -53,3 +53,13 @@ CustomKeywords.'com.nejoumalijazeera.CommonUtils.VerifyFileDownloaded'('Customer
 
 CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.verifyTextFileData'('Customer Car Details!.xlsx')
 
+WebUI.click(findTestObject('Report/StatementOfCarsArriving/PrintButton'))
+
+WebUI.closeWindowIndex(1)
+
+WebUI.switchToWindowIndex(0)
+
+WebUI.click(findTestObject('Report/StatementOfCarsArriving/CopyButton'))
+
+CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.VerifyCopyButton'()
+

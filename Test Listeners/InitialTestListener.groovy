@@ -42,6 +42,6 @@ class InitialTestListener {
 	
 	@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
-		DriverFactory.closeWebDriver();
+		//DriverFactory.closeWebDriver();
 	}
 }
