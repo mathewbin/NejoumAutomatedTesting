@@ -34,7 +34,7 @@ class InitialTestListener {
 	options.setExperimentalOption("prefs", chromePrefs)
 
 	System.setProperty("webdriver.chrome.driver", DriverFactory.getChromeDriverPath())
-	WebDriver driver = new ChromeDriver(options);
+	WebDriver driver = new ChromeDriver(options)
 	driver.get(AppURL)
 	driver.manage().window().maximize()
 	DriverFactory.changeWebDriver(driver)
@@ -42,6 +42,6 @@ class InitialTestListener {
 	
 	@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
-		//DriverFactory.closeWebDriver();
+		DriverFactory.closeWebDriver();
 	}
 }

@@ -39,7 +39,9 @@ WebUI.selectOptionByIndex(findTestObject('Report/StatementOfCarsArriving/Custome
 
 WebUI.click(findTestObject('Report/StatementOfCarsArriving/SearchButton'))
 
+WebUI.setText(findTestObject('Report/StatementOfCarsArriving/SearchInputTxt'), text)
+
 WebUI.delay(10)
 
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.VerifyingOrder'()
+CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.verifyTextinRows'(text)
 

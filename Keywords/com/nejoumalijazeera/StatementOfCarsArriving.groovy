@@ -7,6 +7,7 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection
 import java.text.NumberFormat
+import java.text.SimpleDateFormat
 
 import org.apache.poi.ss.usermodel.Cell
 import org.apache.poi.ss.usermodel.Row
@@ -231,11 +232,85 @@ class StatementOfCarsArriving {
 		Clipboard clipboard = toolkit.getSystemClipboard();
 		String resultBeforeClick = (String) clipboard.getData(DataFlavor.stringFlavor);
 		if(!resultBeforeClick.isEmpty())
-		KeywordUtil.markFailed("Clipboard text is not yet cleaned"+resultBeforeClick)
+			KeywordUtil.markFailed("Clipboard text is not yet cleaned"+resultBeforeClick)
 		WebUI.click(findTestObject('Report/StatementOfCarsArriving/CopyButton'))
 		WebUI.delay(1)
 		String resultAfterClick = (String) clipboard.getData(DataFlavor.stringFlavor);
 		if(resultBeforeClick.equals(resultAfterClick))
 			KeywordUtil.markFailed("Unexpected clipboard text is found"+resultBeforeClick)
+	}
+	
+	/**
+	 * Verifying order
+	 */
+	@Keyword
+	def VerifyingOrder() {
+		WebDriver webDriver = DriverFactory.getWebDriver()
+		// Verify No column
+		List<WebElement> colHeaderWebElements=webDriver.findElements(By.tagName("th"))
+		for(int i=0;i<colHeaderWebElements.size();i++) {
+			if(i==1)
+				continue
+			KeywordUtil.logInfo("Verifying ascending order for column : "+colHeaderWebElements.get(i).text)
+			while(!colHeaderWebElements.get(i).getAttribute("aria-sort").equals("ascending")) {
+				colHeaderWebElements.get(i).click()
+				WebUI.delay(5)
+			}
+			List<WebElement> colWebElements=webDriver.findElements(By.xpath("//td["+(i+1)+"]"))
+			for(int j=0;j<colWebElements.size()-1;j++) {
+				boolean isFailed=false;
+				String firstRow=colWebElements.get(j).text.replace(",","")
+				String secondRow=colWebElements.get(j+1).text.replace(",","")
+				if(i==2) {
+					if(firstRow.compareTo(secondRow)>0)
+						isFailed=true
+				}
+				else if(i==3){
+					SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy",Locale.ENGLISH);
+					if(sdf.parse(firstRow)>sdf.parse(secondRow))
+						isFailed=true
+				}
+				else {
+					float f1=Float.parseFloat(firstRow)
+					float f2=Float.parseFloat(secondRow)
+					if(f1>f2)
+						isFailed=true
+				}
+				if(isFailed)
+					KeywordUtil.markFailedAndStop("Ascending Sorting is failed for column : "+colHeaderWebElements.get(i).text+" at row # "+(j+1)+"\t"+firstRow+"\t"+secondRow)
+			}
+		}
+
+		colHeaderWebElements=webDriver.findElements(By.tagName("th"))
+		for(int i=0;i<colHeaderWebElements.size()-1;i++) {
+			KeywordUtil.logInfo("Verifying Decending order for column : "+colHeaderWebElements.get(i).text)
+			while(!colHeaderWebElements.get(i).getAttribute("aria-sort").equals("descending")) {
+				colHeaderWebElements.get(i).click()
+				WebUI.delay(5)
+			}
+			List<WebElement> colWebElements=webDriver.findElements(By.xpath("//td["+(i+1)+"]"))
+			for(int j=0;j<colWebElements.size()-1;j++) {
+				boolean isFailed=false;
+				String firstRow=colWebElements.get(j).text.replace(",","")
+				String secondRow=colWebElements.get(j+1).text.replace(",","")
+				if(i==1||i==2) {
+					if(firstRow.compareTo(secondRow)<0)
+						isFailed=true
+				}
+				else if(i==3){
+					SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy",Locale.ENGLISH);
+					if(sdf.parse(firstRow)>sdf.parse(secondRow))
+						isFailed=true
+				}
+				else{
+					float f1=Float.parseFloat(firstRow)
+					float f2=Float.parseFloat(secondRow)
+					if(f1<f2)
+						isFailed=true
+				}
+				if(isFailed)
+					KeywordUtil.markFailedAndStop("Decending Sorting is failed for column : "+colHeaderWebElements.get(i).text+" at row # "+(j+1)+firstRow+"\t"+secondRow)
+			}
+		}
 	}
 }

@@ -1,6 +1,7 @@
 package com.nejoumalijazeera
 
 import java.text.NumberFormat
+import java.text.SimpleDateFormat
 
 import org.apache.poi.ss.usermodel.Cell
 import org.apache.poi.ss.usermodel.Row
@@ -19,7 +20,6 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
 
 
 
@@ -109,7 +109,7 @@ public class DwpReport {
 		else
 			KeywordUtil.markFailed("Text doesn't match")
 	}
-	
+
 	/**
 	 * Verify Excel File Data
 	 *
@@ -173,4 +173,74 @@ public class DwpReport {
 			rowCounter++;
 		}
 	}
+
+	/**
+	 * Verifying order
+	 */
+	@Keyword
+	def VerifyingOrder() {
+		WebDriver webDriver = DriverFactory.getWebDriver()
+		// Verify No column
+		List<WebElement> colHeaderWebElements=webDriver.findElements(By.tagName("th"))
+		for(int i=0;i<colHeaderWebElements.size()-1;i++) {
+			KeywordUtil.logInfo("Verifying ascending order for column : "+colHeaderWebElements.get(i).text)
+			while(!colHeaderWebElements.get(i).getAttribute("aria-sort").equals("ascending")) {
+				colHeaderWebElements.get(i).click()
+				WebUI.delay(1)
+			}
+			List<WebElement> colWebElements=webDriver.findElements(By.xpath("//td["+(i+1)+"]"))
+			for(int j=0;j<colWebElements.size()-1;j++) {
+				boolean isFailed=false;
+				String firstRow=colWebElements.get(j).text
+				String secondRow=colWebElements.get(j+1).text
+				if(i==1) {
+					if(firstRow.compareTo(secondRow)>0)
+						isFailed=true
+
+				}
+				else if(i==4){
+					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss",Locale.ENGLISH);
+					if(sdf.parse(firstRow)>sdf.parse(secondRow))
+						isFailed=true
+				}
+				else {
+					if(Float.parseFloat(firstRow)>Float.parseFloat(secondRow))
+						isFailed=true
+				}
+				if(isFailed)
+					KeywordUtil.markFailed("Ascending Soring is failed for column : "+colHeaderWebElements.get(i).text+" at row # "+(j+1))
+			}
+		}
+
+		colHeaderWebElements=webDriver.findElements(By.tagName("th"))
+		for(int i=0;i<colHeaderWebElements.size()-1;i++) {
+			KeywordUtil.logInfo("Verifying Decending order for column : "+colHeaderWebElements.get(i).text)
+			while(!colHeaderWebElements.get(i).getAttribute("aria-sort").equals("descending")) {
+				colHeaderWebElements.get(i).click()
+				WebUI.delay(1)
+			}
+			List<WebElement> colWebElements=webDriver.findElements(By.xpath("//td["+(i+1)+"]"))
+			for(int j=0;j<colWebElements.size()-1;j++) {
+				boolean isFailed=false;
+				String firstRow=colWebElements.get(j).text
+				String secondRow=colWebElements.get(j+1).text
+				if(i==1) {
+					if(firstRow.compareTo(secondRow)<0)
+						isFailed=true
+				}
+				else if(i==4){
+					if(Date.parseToStringDate(firstRow)<Date.parseToStringDate(secondRow))
+						isFailed=true
+				}
+				else {
+					if(Float.parseFloat(firstRow)<Float.parseFloat(secondRow))
+						isFailed=true
+				}
+				if(isFailed)
+					KeywordUtil.markFailed("Decending Soring is failed for column : "+colHeaderWebElements.get(i).text+" at row # "+(j+1))
+			}
+		}
+	}
 }
+
+

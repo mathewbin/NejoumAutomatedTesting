@@ -33,13 +33,9 @@ WebUI.scrollToElement(findTestObject('HomePage/Report-Account Report'), 0)
 
 WebUI.click(findTestObject('HomePage/Report-Account Report'))
 
-WebUI.click(findTestObject('HomePage/Account Report - Statement of cars arriving'))
+WebUI.click(findTestObject('HomePage/Account Report - DWP_Report'))
 
-WebUI.selectOptionByIndex(findTestObject('Report/StatementOfCarsArriving/CustomerDropdown'), 3)
+WebUI.delay(5)
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/SearchButton'))
-
-WebUI.delay(10)
-
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.VerifyingOrder'()
+CustomKeywords.'com.nejoumalijazeera.DwpReport.VerifyingOrder'()
 

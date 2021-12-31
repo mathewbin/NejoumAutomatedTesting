@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_DWP_Report_VerifySorting</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ef8be9c1-cf3b-4f3d-94a7-a5a6f8c19717</testCaseGuid>
+   <variable>
+      <defaultValue>'MSKU'</defaultValue>
+      <description></description>
+      <id>337c1fa7-8ded-4696-a525-a11e7657ce78</id>
+      <masked>false</masked>
+      <name>Text</name>
+   </variable>
+</TestCaseEntity>
