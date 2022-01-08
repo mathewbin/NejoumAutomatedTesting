@@ -1,0 +1,45 @@
+{
+  "keywordFileContentHash": "8AF16F27B0AAA7123D63FF488B594F92",
+  "keywordClasses": [
+    {
+      "name": "com.managerreports.carreports.CarsEnteredToday",
+      "keywordMethods": [
+        {
+          "name": "VerifyCopyButton",
+          "parameters": []
+        },
+        {
+          "name": "VerifyingOrder",
+          "parameters": []
+        },
+        {
+          "name": "verifyShowEntry",
+          "parameters": [
+            {
+              "name": "rowCount",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "verifyTextinRows",
+          "parameters": []
+        },
+        {
+          "name": "verifyPagination",
+          "parameters": []
+        }
+      ]
+    }
+  ],
+  "javadocParsed": false
+}

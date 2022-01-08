@@ -1,0 +1,16 @@
+{
+  "keywordFileContentHash": "83CEF02B1A30A62A606B0D46EE5EF9F3",
+  "keywordClasses": [
+    {
+      "name": "managerreports.CarsEnteredToday",
+      "keywordMethods": [
+        {
+          "name": "VerifyCopyButton",
+          "parameters": [],
+          "javadoc": "/**\r\n\t * Verify Copy Button\r\n\t */"
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

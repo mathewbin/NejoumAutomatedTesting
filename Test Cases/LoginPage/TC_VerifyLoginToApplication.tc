@@ -6,14 +6,14 @@
    <comment></comment>
    <testCaseGuid>14a698ef-104b-4b77-b679-35d0680f80de</testCaseGuid>
    <variable>
-      <defaultValue>''</defaultValue>
+      <defaultValue>GlobalVariable.UserName</defaultValue>
       <description></description>
       <id>6f4cd524-f142-4273-b206-b46aae650aac</id>
       <masked>false</masked>
       <name>email</name>
    </variable>
    <variable>
-      <defaultValue>''</defaultValue>
+      <defaultValue>GlobalVariable.Password</defaultValue>
       <description></description>
       <id>dc594dff-d4ee-446a-b857-a17f24b343ec</id>
       <masked>false</masked>

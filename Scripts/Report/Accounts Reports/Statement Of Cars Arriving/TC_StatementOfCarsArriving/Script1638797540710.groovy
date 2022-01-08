@@ -23,7 +23,7 @@ WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Password'), '88884444333')
 
 WebUI.click(findTestObject('LoginPage/Btn_Login'))
 
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.DismissUnnecessaryNotification'()
+CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.DismissUnnecessaryNotification'()
 
 WebUI.click(findTestObject('HomePage/Report'))
 
@@ -45,13 +45,13 @@ WebUI.selectOptionByLabel(findTestObject('Report/StatementOfCarsArriving/StatusD
 
 WebUI.click(findTestObject('Report/StatementOfCarsArriving/SearchButton'))
 
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.verifyRemainingColumnsForPaidStatus'()
+CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.verifyRemainingColumnsForPaidStatus'()
 
 WebUI.selectOptionByLabel(findTestObject('Report/StatementOfCarsArriving/StatusDropdown'), 'UnPaid', false)
 
 WebUI.click(findTestObject('Report/StatementOfCarsArriving/SearchButton'))
 
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.verifyRemainingColumnsForUnPaidStatus'()
+CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.verifyRemainingColumnsForUnPaidStatus'()
 
 WebUI.click(findTestObject('Report/StatementOfCarsArriving/ExcelButton'))
 
@@ -63,5 +63,5 @@ WebUI.setText(findTestObject('Report/StatementOfCarsArriving/SearchInputTxt'), '
 
 WebUI.delay(10)
 
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.verifyTextinRows'('TOYOTA')
+CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.verifyTextinRows'('TOYOTA')
 

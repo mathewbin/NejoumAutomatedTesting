@@ -23,7 +23,7 @@ WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Password'), GlobalVariable.Pas
 
 WebUI.click(findTestObject('LoginPage/Btn_Login'))
 
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.DismissUnnecessaryNotification'()
+CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.DismissUnnecessaryNotification'()
 
 WebUI.click(findTestObject('HomePage/Report'))
 
@@ -41,5 +41,5 @@ WebUI.selectOptionByValue(findTestObject('Report/DWPReport/ShowDropdown'), '200'
 
 WebUI.delay(5)
 
-CustomKeywords.'com.nejoumalijazeera.DwpReport.verifyRowData'(findTestData('Report/DWP Report/Row Data'))
+CustomKeywords.'com.reports.accountreports.DwpReport.verifyRowData'(findTestData('Report/DWP Report/Row Data'))
 

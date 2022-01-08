@@ -23,7 +23,7 @@ WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Password'), GlobalVariable.Pas
 
 WebUI.click(findTestObject('LoginPage/Btn_Login'))
 
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.DismissUnnecessaryNotification'()
+CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.DismissUnnecessaryNotification'()
 
 WebUI.click(findTestObject('HomePage/Report'))
 
@@ -37,5 +37,5 @@ WebUI.click(findTestObject('HomePage/Account Report - Limit'))
 
 WebUI.delay(5)
 
-CustomKeywords.'com.nejoumalijazeera.Limit.VerifyingOrder'()
+CustomKeywords.'com.reports.accountreports.Limit.VerifyingOrder'()
 

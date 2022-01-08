@@ -23,7 +23,7 @@ WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Password'), GlobalVariable.Pas
 
 WebUI.click(findTestObject('LoginPage/Btn_Login'))
 
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.DismissUnnecessaryNotification'()
+CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.DismissUnnecessaryNotification'()
 
 WebUI.click(findTestObject('HomePage/Report'))
 
@@ -47,11 +47,11 @@ WebUI.click(findTestObject('Report/StatementOfCarsArriving/ExcelButton'))
 
 WebUI.delay(10)
 
-CustomKeywords.'com.nejoumalijazeera.CommonUtils.VerifyFileDownloaded'('Customer Car Details!.csv')
+CustomKeywords.'com.reports.accountreports.CommonUtils.VerifyFileDownloaded'('Customer Car Details!.csv')
 
-CustomKeywords.'com.nejoumalijazeera.CommonUtils.VerifyFileDownloaded'('Customer Car Details!.pdf')
+CustomKeywords.'com.reports.accountreports.CommonUtils.VerifyFileDownloaded'('Customer Car Details!.pdf')
 
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.verifyTextFileData'('Customer Car Details!.xlsx')
+CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.verifyTextFileData'('Customer Car Details!.xlsx')
 
 WebUI.click(findTestObject('Report/StatementOfCarsArriving/PrintButton'))
 
@@ -61,5 +61,5 @@ WebUI.switchToWindowIndex(0)
 
 WebUI.click(findTestObject('Report/StatementOfCarsArriving/CopyButton'))
 
-CustomKeywords.'com.nejoumalijazeera.StatementOfCarsArriving.VerifyCopyButton'()
+CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.VerifyCopyButton'()
 

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Report</name>
+   <name>EntryToday</name>
    <tag></tag>
-   <elementGuidId>dfae8b4b-cabd-4432-9600-caa3c5b3d5b9</elementGuidId>
+   <elementGuidId>8e7c5613-d7d9-4d69-837f-c3d19ff085b4</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[@class='hide-menu'][text()='Reports']/parent::a
-</value>
+         <value>//div[@id='accordion2']//a[contains(@href,'/CarReport/carInsertedToday')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

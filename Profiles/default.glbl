@@ -6,17 +6,17 @@
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://nejoumaljazeera.tech/Nejoum99/Authentication/login'</initValue>
+      <initValue>'https://nejoumaljazeera.co/'</initValue>
       <name>URL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'tester@gmail.com'</initValue>
+      <initValue>'binoy@nejoumaljazeera.com'</initValue>
       <name>UserName</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'88884444333'</initValue>
+      <initValue>'123456'</initValue>
       <name>Password</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

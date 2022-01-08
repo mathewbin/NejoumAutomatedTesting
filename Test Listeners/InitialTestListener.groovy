@@ -26,13 +26,19 @@ class InitialTestListener {
 	DownloadFolderPath=DownloadFolderPath.replace('/', '\\')
 	FileUtils.cleanDirectory(new File(DownloadFolderPath));
 	String AppURL=GlobalVariable.URL
-				
+	
+	ChromeOptions options=new ChromeOptions();
+	options.addArguments("accept-language=en-US");
+	 
 	Map<String, Object> chromePrefs = new HashMap<String, Object>()
+	Map<String, Object> langs = new HashMap<String, Object>();
+	langs.put("ar", "en");
+	chromePrefs.put("translate", "{'enabled' : true}");
+	chromePrefs.put("translate_whitelists", langs);
 	chromePrefs.put("download.default_directory", DownloadFolderPath)
 	chromePrefs.put("download.prompt_for_download", false)
-	ChromeOptions options=new ChromeOptions();
-	options.setExperimentalOption("prefs", chromePrefs)
-
+	options.setExperimentalOption("prefs", chromePrefs);
+				
 	System.setProperty("webdriver.chrome.driver", DriverFactory.getChromeDriverPath())
 	WebDriver driver = new ChromeDriver(options)
 	driver.get(AppURL)
@@ -42,6 +48,6 @@ class InitialTestListener {
 	
 	@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
-		DriverFactory.closeWebDriver();
+		//DriverFactory.closeWebDriver();
 	}
 }

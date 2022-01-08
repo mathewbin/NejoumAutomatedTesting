@@ -1,5 +1,11 @@
-package com.nejoumalijazeera
+package com.reports.accountreports
 
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.StringSelection
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 
@@ -9,93 +15,117 @@ import org.apache.poi.xssf.usermodel.XSSFRow
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.openqa.selenium.By
+import org.openqa.selenium.Keys
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
-import org.openqa.selenium.support.ui.Select
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.configuration.RunConfiguration
-import com.kms.katalon.core.testdata.TestData
-import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-
-
-
-
-
-
-public class DwpReport {
-
+class StatementOfCarsArriving {
 	/**
-	 * Verify Show Entries
+	 * Verify amount 0.00 for Remaining column for Paid status 
 	 */
 	@Keyword
-	def verifyShowEntry(TestObject showDropdown, String rowCount) {
-		KeywordUtil.logInfo("Verifying row count as per selection")
+	def verifyRemainingColumnsForPaidStatus() {
+		KeywordUtil.logInfo("Verifying rows for Paid status")
 		WebDriver webDriver = DriverFactory.getWebDriver()
-		List<WebElement> elements = webDriver.findElements(By.xpath("//td/parent::tr"))
-		WebElement element = WebUI.findWebElement(showDropdown);
-		Select selectDropdown=new Select(element);
-		if(!selectDropdown.firstSelectedOption.text.equals(rowCount))
-			KeywordUtil.markFailed("Expected row count is not matched.")
-		else if(elements.size()!=Integer.parseInt(rowCount))
-			KeywordUtil.markPassed("Displayed Row count is not matched as per selection")
+		List<WebElement> elements = webDriver.findElements(By.xpath("//td[23]"))
+		KeywordUtil.logInfo("Total rows"+elements.size())
+		boolean isSuccess=true;
+		for(int i=0;i<elements.size();i++) {
+			if(!elements[i].text.equals("0.00")) {
+				isSuccess=false;
+				break;
+			}
+		}
+		if(isSuccess)
+			KeywordUtil.markPassed("Remaining column value is verified successfully")
 		else
-			KeywordUtil.logInfo("Show Entry Verified for Row Count "+rowCount);
+			KeywordUtil.markFailed("Remaining column is non-zero")
 	}
 
 	/**
-	 * Verify TestData
+	 * Verify Total for all columns
 	 */
 	@Keyword
-	def verifyRowData(TestData testdata) {
-		int expectedRowNumbers=testdata.getRowNumbers()
-		int expectedColNumbers=testdata.getColumnNumbers()
+	def verifyColumnsTotal() {
+		KeywordUtil.logInfo("Verifying total")
+		String[] columns=[
+			"Towing",
+			"Shipping",
+			"Clearance",
+			"Custom",
+			"Extra",
+			"Additional",
+			"Recovery",
+			"Towing Fines",
+			"Vat",
+			"Shipping Commission",
+			"Discount",
+			"BOS",
+			"Storage Old",
+			"Other",
+			"Total",
+			"Storage New",
+			"Forklift",
+			"Paid",
+			"Remaining",
+			"Car Remaining",
+			"Final"
+		]
+		NumberFormat format = NumberFormat.getCurrencyInstance();
 		WebDriver webDriver = DriverFactory.getWebDriver()
-		//Verifying Row Count
-		String temp=webDriver.findElement(By.id("example23_info")).getText().replace("Showing 1 to 200 of ", "").replace(" entries", "").replace(",", "");
-		int actualRowNumbers=Integer.parseInt(temp);
-		if(actualRowNumbers!=expectedRowNumbers)
-			KeywordUtil.markFailed("Row count is not matched. Actual : "+actualRowNumbers+" Expected : "+expectedRowNumbers);
-		else
-			KeywordUtil.markPassed("Row count is matched in front end and back end")
-		//Verifying row data
-		KeywordUtil.logInfo("Total row # "+expectedRowNumbers)
-		int i=1;
-		for(int rowCounter=1;rowCounter<=expectedRowNumbers;rowCounter++) {
-			KeywordUtil.logInfo("Verifying test data for row # "+rowCounter)
-			String actualData=webDriver.findElement(By.xpath("//tr["+i+"]/td[1]")).getText().trim().replace("\n", "")
-			int actRowNumber=Integer.parseInt(actualData)
-			if(actRowNumber!=rowCounter)
-				KeywordUtil.markFailed("Row Number is not matched. Expected : "+rowCounter+" Actual : "+actRowNumber)
-			for(int j=1;j<=expectedColNumbers;j++) {
-				String expectedData=testdata.getValue(j, i).trim()
-				expectedData=expectedData.isEmpty()?"/":expectedData
-				actualData=webDriver.findElement(By.xpath("//tr["+i+"]/td["+(j+1)+"]")).getText().trim()
-				if(!expectedData.equals(actualData))
-					KeywordUtil.markFailed("Data is not matched in excel sheet. Expected : "+expectedData+" Actual : "+actualData+" Index : ["+i+","+j+"]")
+		Number number =null;
+		for(int i=5;i<=25;i++) {
+			List<WebElement> elements = webDriver.findElements(By.xpath("//td["+i+"]"))
+			Float sum=0.00;
+			for(int j=0;j<elements.size()-1;j++) {
+				sum=sum+Float.parseFloat(elements[j].getText().replace(",",""))
 			}
-			if(i==100) {
-				webDriver.findElement(By.linkText("Next")).click()
-				i=1;
-				WebUI.delay(2)
+			if(!Float.parseFloat(elements[elements.size()-1].getText().replace(",","")).equals(Float.parseFloat(sum.toString()))) {
+				KeywordUtil.markFailed("Total is not matched for column "+columns[i-5]+". Actual : "+elements[elements.size()-1].getText()+" Expected : "+sum)
 			}
-			i++
+			else {
+				KeywordUtil.logInfo("Total "+elements[elements.size()-1].getText()+" is matched for Column : "+columns[i-5]);
+			}
 		}
 	}
 
 	/**
+	 * Verify amount 0.00 for Remaining column for Paid status
+	 */
+	@Keyword
+	def verifyRemainingColumnsForUnPaidStatus() {
+		KeywordUtil.logInfo("Verifying rows for UnPaid status")
+		WebDriver webDriver = DriverFactory.getWebDriver()
+		List<WebElement> elements = webDriver.findElements(By.xpath("//td[23]"))
+		KeywordUtil.logInfo("Total rows"+elements.size())
+		boolean isSuccess=true;
+		for(int i=0;i<elements.size();i++) {
+			if(elements[i].text.equals("0.00")) {
+				isSuccess=false;
+				break;
+			}
+		}
+		if(isSuccess)
+			KeywordUtil.markPassed("Remaining column value is verified successfully")
+		else
+			KeywordUtil.markFailed("Remaining column is zero")
+	}
+
+	/**
 	 * Verify visibility of given text in all rows
-	 *
+	 * 
 	 */
 	@Keyword
 	def verifyTextinRows(String text) {
 		KeywordUtil.logInfo("Verifying text in all available rows")
 		WebDriver webDriver = DriverFactory.getWebDriver()
-		List<WebElement> elements = webDriver.findElements(By.xpath("//td/parent::tr"));
+		List<WebElement> elements = webDriver.findElements(By.xpath("//tr[not(position() > last() -1)]"));
 		KeywordUtil.logInfo("Total rows"+elements.size())
 		boolean isSuccess=true;
 		for(int i=0;i<elements.size();i++) {
@@ -105,9 +135,9 @@ public class DwpReport {
 			}
 		}
 		if(isSuccess)
-			KeywordUtil.markPassed("Text match is verified successfully")
+			KeywordUtil.markPassed("Text verified successfully")
 		else
-			KeywordUtil.markFailed("Text doesn't match")
+			KeywordUtil.markFailed("Text verification failed")
 	}
 
 	/**
@@ -152,7 +182,7 @@ public class DwpReport {
 						break;
 					case Cell.CELL_TYPE_NUMERIC:
 						double d=  cell.getNumericCellValue()
-						actualText=d<1000?((int)d).toString():formatter.format(d)
+						actualText=d<1000?((int)d).toString():formatter.format(d).replace("\$", "")
 						break;
 				}
 				if(rowCounter==0) {
@@ -175,6 +205,27 @@ public class DwpReport {
 	}
 
 	/**
+	 * Verify Copy Button
+	 */
+	@Keyword
+	def VerifyCopyButton() {
+		KeywordUtil.logInfo("Verifying Copy Button")
+		StringSelection stringSelection = new StringSelection("");
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(
+				stringSelection, null);
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		Clipboard clipboard = toolkit.getSystemClipboard();
+		String resultBeforeClick = (String) clipboard.getData(DataFlavor.stringFlavor);
+		if(!resultBeforeClick.isEmpty())
+			KeywordUtil.markFailed("Clipboard text is not yet cleaned"+resultBeforeClick)
+		WebUI.click(findTestObject('Report/StatementOfCarsArriving/CopyButton'))
+		WebUI.delay(1)
+		String resultAfterClick = (String) clipboard.getData(DataFlavor.stringFlavor);
+		if(resultBeforeClick.equals(resultAfterClick))
+			KeywordUtil.markFailed("Unexpected clipboard text is found"+resultBeforeClick)
+	}
+
+	/**
 	 * Verifying order
 	 */
 	@Keyword
@@ -182,33 +233,36 @@ public class DwpReport {
 		WebDriver webDriver = DriverFactory.getWebDriver()
 		// Verify No column
 		List<WebElement> colHeaderWebElements=webDriver.findElements(By.tagName("th"))
-		for(int i=0;i<colHeaderWebElements.size()-1;i++) {
+		for(int i=0;i<colHeaderWebElements.size();i++) {
+			if(i==1)
+				continue
 			KeywordUtil.logInfo("Verifying ascending order for column : "+colHeaderWebElements.get(i).text)
 			while(!colHeaderWebElements.get(i).getAttribute("aria-sort").equals("ascending")) {
 				colHeaderWebElements.get(i).click()
-				WebUI.delay(1)
+				WebUI.delay(5)
 			}
 			List<WebElement> colWebElements=webDriver.findElements(By.xpath("//td["+(i+1)+"]"))
 			for(int j=0;j<colWebElements.size()-1;j++) {
 				boolean isFailed=false;
-				String firstRow=colWebElements.get(j).text
-				String secondRow=colWebElements.get(j+1).text
-				if(i==1) {
+				String firstRow=colWebElements.get(j).text.replace(",","")
+				String secondRow=colWebElements.get(j+1).text.replace(",","")
+				if(i==2) {
 					if(firstRow.compareTo(secondRow)>0)
 						isFailed=true
-
 				}
-				else if(i==4){
-					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss",Locale.ENGLISH);
+				else if(i==3){
+					SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy",Locale.ENGLISH);
 					if(sdf.parse(firstRow)>sdf.parse(secondRow))
 						isFailed=true
 				}
 				else {
-					if(Float.parseFloat(firstRow)>Float.parseFloat(secondRow))
+					float f1=Float.parseFloat(firstRow)
+					float f2=Float.parseFloat(secondRow)
+					if(f1>f2)
 						isFailed=true
 				}
 				if(isFailed)
-					KeywordUtil.markFailed("Ascending Soring is failed for column : "+colHeaderWebElements.get(i).text+" at row # "+(j+1))
+					KeywordUtil.markFailedAndStop("Ascending Sorting is failed for column : "+colHeaderWebElements.get(i).text+" at row # "+(j+1)+"\t"+firstRow+"\t"+secondRow)
 			}
 		}
 
@@ -217,30 +271,31 @@ public class DwpReport {
 			KeywordUtil.logInfo("Verifying Decending order for column : "+colHeaderWebElements.get(i).text)
 			while(!colHeaderWebElements.get(i).getAttribute("aria-sort").equals("descending")) {
 				colHeaderWebElements.get(i).click()
-				WebUI.delay(1)
+				WebUI.delay(5)
 			}
 			List<WebElement> colWebElements=webDriver.findElements(By.xpath("//td["+(i+1)+"]"))
 			for(int j=0;j<colWebElements.size()-1;j++) {
 				boolean isFailed=false;
-				String firstRow=colWebElements.get(j).text
-				String secondRow=colWebElements.get(j+1).text
-				if(i==1) {
+				String firstRow=colWebElements.get(j).text.replace(",","")
+				String secondRow=colWebElements.get(j+1).text.replace(",","")
+				if(i==1||i==2) {
 					if(firstRow.compareTo(secondRow)<0)
 						isFailed=true
 				}
-				else if(i==4){
-					if(Date.parseToStringDate(firstRow)<Date.parseToStringDate(secondRow))
+				else if(i==3){
+					SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy",Locale.ENGLISH);
+					if(sdf.parse(firstRow)>sdf.parse(secondRow))
 						isFailed=true
 				}
-				else {
-					if(Float.parseFloat(firstRow)<Float.parseFloat(secondRow))
+				else{
+					float f1=Float.parseFloat(firstRow)
+					float f2=Float.parseFloat(secondRow)
+					if(f1<f2)
 						isFailed=true
 				}
 				if(isFailed)
-					KeywordUtil.markFailed("Decending Soring is failed for column : "+colHeaderWebElements.get(i).text+" at row # "+(j+1))
+					KeywordUtil.markFailedAndStop("Decending Sorting is failed for column : "+colHeaderWebElements.get(i).text+" at row # "+(j+1)+firstRow+"\t"+secondRow)
 			}
 		}
 	}
 }
-
-

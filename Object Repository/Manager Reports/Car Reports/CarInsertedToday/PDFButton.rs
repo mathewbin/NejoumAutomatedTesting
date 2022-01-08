@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Report</name>
+   <name>PDFButton</name>
    <tag></tag>
-   <elementGuidId>dfae8b4b-cabd-4432-9600-caa3c5b3d5b9</elementGuidId>
+   <elementGuidId>dcb13894-5d64-4538-8c2a-d9ab60dedaac</elementGuidId>
    <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//span[text()='CSV']/parent::a</value>
+      </entry>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//span[@class='hide-menu'][text()='Reports']/parent::a
-</value>
+         <key>CSS</key>
+         <value>a.buttons-pdf</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>CSS</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>
