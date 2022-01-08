@@ -29,27 +29,21 @@ WebUI.refresh()
 
 WebUI.click(findTestObject('HomePage/Manager Reports'))
 
-WebUI.click(findTestObject('Manager Reports/Car Reports/EntryToday'))
-
-WebUI.sendKeys(findTestObject('Manager Reports/Car Reports/CarInsertedToday/FromDate'), '01012022')
-
-WebUI.sendKeys(findTestObject('Manager Reports/Car Reports/CarInsertedToday/ToDate'), '01312022')
-
-WebUI.click(findTestObject('Manager Reports/Car Reports/CarInsertedToday/SearchBtn'))
+WebUI.click(findTestObject('Manager Reports/Car Reports/HangingCar'))
 
 WebUI.delay(5)
 
 CustomKeywords.'com.reports.accountreports.CommonUtils.DismissUnnecessaryNotification'()
 
-WebUI.click(findTestObject('Manager Reports/Car Reports/CarInsertedToday/ExcelButton'))
+WebUI.click(findTestObject('Manager Reports/Car Reports/PendingCarsReport/ExcelButton'))
 
-WebUI.click(findTestObject('Manager Reports/Car Reports/CarInsertedToday/PDFButton'))
+WebUI.click(findTestObject('Manager Reports/Car Reports/PendingCarsReport/PDFButton'))
 
-WebUI.click(findTestObject('Manager Reports/Car Reports/CarInsertedToday/CopyButton'))
+WebUI.click(findTestObject('Manager Reports/Car Reports/PendingCarsReport/CopyButton'))
 
-CustomKeywords.'com.managerreports.carreports.CarsEnteredToday.VerifyCopyButton'()
+CustomKeywords.'com.managerreports.carreports.PendingCars.VerifyingOrder'()
 
-WebUI.click(findTestObject('Manager Reports/Car Reports/CarInsertedToday/PrintButton'))
+WebUI.click(findTestObject('Manager Reports/Car Reports/PendingCarsReport/PrintButton'))
 
 WebUI.closeWindowIndex(1)
 
@@ -59,13 +53,13 @@ CustomKeywords.'com.reports.accountreports.CommonUtils.VerifyFileDownloaded'('Ca
 
 CustomKeywords.'com.reports.accountreports.CommonUtils.VerifyFileDownloaded'('Cars inserted today.pdf')
 
-WebUI.selectOptionByValue(findTestObject('Manager Reports/Car Reports/CarInsertedToday/ShowDropdown'), '50', false)
+WebUI.selectOptionByValue(findTestObject('Manager Reports/Car Reports/PendingCarsReport/ShowDropdown'), '50', false)
 
-CustomKeywords.'com.managerreports.carreports.CarsEnteredToday.verifyShowEntry'(0)
+CustomKeywords.'com.managerreports.carreports.PendingCars.VerifyingOrder'()
 
-CustomKeywords.'com.managerreports.carreports.CarsEnteredToday.VerifyingOrder'()
+CustomKeywords.'com.managerreports.carreports.PendingCars.verifyShowEntry'(50)
 
-CustomKeywords.'com.managerreports.carreports.CarsEnteredToday.verifyPagination'()
+CustomKeywords.'com.managerreports.carreports.PendingCars.verifyPagination'()
 
-CustomKeywords.'com.managerreports.carreports.CarsEnteredToday.verifyTextinRows'()
+CustomKeywords.'com.managerreports.carreports.PendingCars.verifyTextinRows'()
 

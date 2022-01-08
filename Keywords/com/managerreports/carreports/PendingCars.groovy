@@ -19,7 +19,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 
 
-public class CarsEnteredToday {
+public class PendingCars {
 
 	/**
 	 * Verify Copy Button
@@ -106,6 +106,9 @@ public class CarsEnteredToday {
 		List<WebElement> elements = webDriver.findElements(By.xpath("//td/parent::tr"))
 		WebElement element = WebUI.findWebElement(findTestObject("Object Repository/Manager Reports/Car Reports/CarInsertedToday/ShowDropdown"));
 		Select selectDropdown=new Select(element);
+		int totalRows=Integer.parseInt(webDriver.findElement(By.id("tableLengthAndBTN_info")).text.split(" ")[5])
+		if(totalRows<rowCount)
+			return
 		if(!selectDropdown.firstSelectedOption.text.equals(rowCount))
 			KeywordUtil.markFailed("Expected row count is not matched.")
 		else if(elements.size()!=Integer.parseInt(rowCount))
@@ -122,6 +125,9 @@ public class CarsEnteredToday {
 	def verifyTextinRows() {
 		KeywordUtil.logInfo("Verifying text in all available rows")
 		WebDriver webDriver = DriverFactory.getWebDriver()
+		int totalRows=Integer.parseInt(webDriver.findElement(By.id("tableLengthAndBTN_info")).text.split(" ")[5])
+		if(totalRows==0)
+			return
 		List<WebElement> elements = webDriver.findElements(By.xpath("//td[2]"));
 		Random random=new Random()
 		int randomNumber=random.nextInt(elements.size())

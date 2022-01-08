@@ -1,18 +1,16 @@
 {
-  "keywordFileContentHash": "8AF16F27B0AAA7123D63FF488B594F92",
+  "keywordFileContentHash": "5F3BFA574AABDE43789693DD9B6AE163",
   "keywordClasses": [
     {
-      "name": "com.managerreports.carreports.CarsEnteredToday",
+      "name": "com.managerreports.carreports.PendingCars",
       "keywordMethods": [
         {
           "name": "VerifyCopyButton",
-          "parameters": [],
-          "javadoc": "/**\r\n\t * Verify Copy Button\r\n\t */"
+          "parameters": []
         },
         {
           "name": "VerifyingOrder",
-          "parameters": [],
-          "javadoc": "/**\r\n\t * Verifying order\r\n\t */"
+          "parameters": []
         },
         {
           "name": "verifyShowEntry",
@@ -30,21 +28,18 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify Show Entries\r\n\t */"
+          ]
         },
         {
           "name": "verifyTextinRows",
-          "parameters": [],
-          "javadoc": "/**\r\n\t * Verify visibility of given text in all rows\r\n\t *\r\n\t */"
+          "parameters": []
         },
         {
           "name": "verifyPagination",
-          "parameters": [],
-          "javadoc": "/**\r\n\t * Verify pagination\r\n\t *\r\n\t */"
+          "parameters": []
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

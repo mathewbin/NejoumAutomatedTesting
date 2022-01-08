@@ -29,43 +29,37 @@ WebUI.refresh()
 
 WebUI.click(findTestObject('HomePage/Manager Reports'))
 
-WebUI.click(findTestObject('Manager Reports/Car Reports/EntryToday'))
-
-WebUI.sendKeys(findTestObject('Manager Reports/Car Reports/CarInsertedToday/FromDate'), '01012022')
-
-WebUI.sendKeys(findTestObject('Manager Reports/Car Reports/CarInsertedToday/ToDate'), '01312022')
-
-WebUI.click(findTestObject('Manager Reports/Car Reports/CarInsertedToday/SearchBtn'))
+WebUI.click(findTestObject('Manager Reports/Car Reports/LateEntryCar'))
 
 WebUI.delay(5)
 
 CustomKeywords.'com.reports.accountreports.CommonUtils.DismissUnnecessaryNotification'()
 
-WebUI.click(findTestObject('Manager Reports/Car Reports/CarInsertedToday/ExcelButton'))
+WebUI.click(findTestObject('Manager Reports/Car Reports/LateEntryCarsReport/ExcelButton'))
 
-WebUI.click(findTestObject('Manager Reports/Car Reports/CarInsertedToday/PDFButton'))
+WebUI.click(findTestObject('Manager Reports/Car Reports/LateEntryCarsReport/PDFButton'))
 
-WebUI.click(findTestObject('Manager Reports/Car Reports/CarInsertedToday/CopyButton'))
+WebUI.click(findTestObject('Manager Reports/Car Reports/LateEntryCarsReport/CopyButton'))
 
-CustomKeywords.'com.managerreports.carreports.CarsEnteredToday.VerifyCopyButton'()
+CustomKeywords.'com.managerreports.carreports.LateEntryCars.VerifyCopyButton'()
 
-WebUI.click(findTestObject('Manager Reports/Car Reports/CarInsertedToday/PrintButton'))
+WebUI.click(findTestObject('Manager Reports/Car Reports/LateEntryCarsReport/PrintButton'))
 
 WebUI.closeWindowIndex(1)
 
 WebUI.switchToWindowIndex(0)
 
-CustomKeywords.'com.reports.accountreports.CommonUtils.VerifyFileDownloaded'('Cars inserted today.xlsx')
+CustomKeywords.'com.reports.accountreports.CommonUtils.VerifyFileDownloaded'('Cars Late More than 2 today.xlsx')
 
-CustomKeywords.'com.reports.accountreports.CommonUtils.VerifyFileDownloaded'('Cars inserted today.pdf')
+CustomKeywords.'com.reports.accountreports.CommonUtils.VerifyFileDownloaded'('Cars Late More than 2 today.pdf')
 
-WebUI.selectOptionByValue(findTestObject('Manager Reports/Car Reports/CarInsertedToday/ShowDropdown'), '50', false)
+WebUI.selectOptionByValue(findTestObject('Manager Reports/Car Reports/LateEntryCarsReport/ShowDropdown'), '50', false)
 
-CustomKeywords.'com.managerreports.carreports.CarsEnteredToday.verifyShowEntry'(0)
+CustomKeywords.'com.managerreports.carreports.LateEntryCars.VerifyingOrder'()
 
-CustomKeywords.'com.managerreports.carreports.CarsEnteredToday.VerifyingOrder'()
+CustomKeywords.'com.managerreports.carreports.LateEntryCars.verifyShowEntry'(50)
 
-CustomKeywords.'com.managerreports.carreports.CarsEnteredToday.verifyPagination'()
+CustomKeywords.'com.managerreports.carreports.LateEntryCars.verifyPagination'()
 
-CustomKeywords.'com.managerreports.carreports.CarsEnteredToday.verifyTextinRows'()
+CustomKeywords.'com.managerreports.carreports.LateEntryCars.verifyTextinRows'()
 
