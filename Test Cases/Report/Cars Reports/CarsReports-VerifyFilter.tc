@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CarsReports-VerifyFilter</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7b4fdbac-27a5-418d-8fb7-962bb9d24029</testCaseGuid>
+   <variable>
+      <defaultValue>'01/01/2022'</defaultValue>
+      <description></description>
+      <id>5252b0e6-989b-4b9b-95f4-098fd7deb731</id>
+      <masked>false</masked>
+      <name>FromDate</name>
+   </variable>
+   <variable>
+      <defaultValue>'01/31/2022'</defaultValue>
+      <description></description>
+      <id>21a18117-ff17-42b8-96aa-e394e01c0a64</id>
+      <masked>false</masked>
+      <name>ToDate</name>
+   </variable>
+   <variable>
+      <defaultValue>'Paid'</defaultValue>
+      <description></description>
+      <id>7ecfdb6b-4950-4cb1-9b45-44b30925aa8a</id>
+      <masked>false</masked>
+      <name>Status</name>
+   </variable>
+</TestCaseEntity>

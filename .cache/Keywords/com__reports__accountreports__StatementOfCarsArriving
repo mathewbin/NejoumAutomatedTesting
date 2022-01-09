@@ -6,15 +6,18 @@
       "keywordMethods": [
         {
           "name": "verifyRemainingColumnsForPaidStatus",
-          "parameters": []
+          "parameters": [],
+          "javadoc": "/**\n\t * Verify amount 0.00 for Remaining column for Paid status \n\t */"
         },
         {
           "name": "verifyColumnsTotal",
-          "parameters": []
+          "parameters": [],
+          "javadoc": "/**\n\t * Verify Total for all columns\n\t */"
         },
         {
           "name": "verifyRemainingColumnsForUnPaidStatus",
-          "parameters": []
+          "parameters": [],
+          "javadoc": "/**\n\t * Verify amount 0.00 for Remaining column for Paid status\n\t */"
         },
         {
           "name": "verifyTextinRows",
@@ -32,7 +35,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\n\t * Verify visibility of given text in all rows\n\t * \n\t */"
         },
         {
           "name": "verifyTextFileData",
@@ -50,18 +54,21 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\n\t * Verify Excel File Data\n\t *\n\t */"
         },
         {
           "name": "VerifyCopyButton",
-          "parameters": []
+          "parameters": [],
+          "javadoc": "/**\n\t * Verify Copy Button\n\t */"
         },
         {
           "name": "VerifyingOrder",
-          "parameters": []
+          "parameters": [],
+          "javadoc": "/**\n\t * Verifying order\n\t */"
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

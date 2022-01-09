@@ -1,8 +1,8 @@
 {
-  "keywordFileContentHash": "5F3BFA574AABDE43789693DD9B6AE163",
+  "keywordFileContentHash": "F824F6D1668C430FA3C275B5D08E68D5",
   "keywordClasses": [
     {
-      "name": "com.managerreports.carreports.PendingCars",
+      "name": "com.reports.carsreports.CarsEnteredToday",
       "keywordMethods": [
         {
           "name": "VerifyCopyButton",
@@ -42,6 +42,25 @@
           "name": "verifyPagination",
           "parameters": [],
           "javadoc": "/**\r\n\t * Verify pagination\r\n\t *\r\n\t */"
+        },
+        {
+          "name": "selectStatus",
+          "parameters": [
+            {
+              "name": "status",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * Select Status\r\n\t *\r\n\t */"
         }
       ]
     }

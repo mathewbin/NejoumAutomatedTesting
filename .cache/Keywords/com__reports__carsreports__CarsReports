@@ -1,0 +1,224 @@
+{
+  "keywordFileContentHash": "BA90EEB783F70725DEFC23C19F46DD21",
+  "keywordClasses": [
+    {
+      "name": "com.reports.carsreports.CarsReports",
+      "keywordMethods": [
+        {
+          "name": "VerifyCopyButton",
+          "parameters": [],
+          "javadoc": "/**\r\n\t * Verify Copy Button\r\n\t */"
+        },
+        {
+          "name": "VerifyingOrder",
+          "parameters": [],
+          "javadoc": "/**\r\n\t * Verifying order\r\n\t */"
+        },
+        {
+          "name": "verifyShowEntry",
+          "parameters": [
+            {
+              "name": "dropdownObject",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "rowCount",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * Verify Show Entries\r\n\t */"
+        },
+        {
+          "name": "verifyTextinRows",
+          "parameters": [],
+          "javadoc": "/**\r\n\t * Verify visibility of given text in all rows\r\n\t *\r\n\t */"
+        },
+        {
+          "name": "verifyPagination",
+          "parameters": [
+            {
+              "name": "showDropdown",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "previousButtonObject",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "nextButtonObject",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * Verify pagination\r\n\t *\r\n\t */"
+        },
+        {
+          "name": "selectStatus",
+          "parameters": [
+            {
+              "name": "status",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * Select Status\r\n\t *\r\n\t */"
+        },
+        {
+          "name": "VerifyPurchaseOnFilter",
+          "parameters": [
+            {
+              "name": "dateInput1",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "dateInput2",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * Verify Purchase on Filter\r\n\t */"
+        },
+        {
+          "name": "VerifyCreatedDateFilter",
+          "parameters": [
+            {
+              "name": "dateInput1",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "dateInput2",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * Verify Created Date Filter\r\n\t */"
+        },
+        {
+          "name": "VerifyStatusFilter",
+          "parameters": [
+            {
+              "name": "status",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * Verify Status Filter\r\n\t */"
+        },
+        {
+          "name": "VerifyAuctionFilter",
+          "parameters": [
+            {
+              "name": "auction",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * Verify Auction Filter\r\n\t */"
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

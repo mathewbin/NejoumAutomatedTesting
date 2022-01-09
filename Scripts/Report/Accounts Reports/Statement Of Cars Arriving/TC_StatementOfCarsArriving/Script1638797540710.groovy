@@ -37,9 +37,9 @@ WebUI.click(findTestObject('HomePage/Account Report - Statement of cars arriving
 
 WebUI.selectOptionByIndex(findTestObject('Report/StatementOfCarsArriving/CustomerDropdown'), 3)
 
-WebUI.setText(findTestObject('Report/StatementOfCarsArriving/FromDate'), FromDate)
+WebUI.setText(findTestObject('Report/StatementOfCarsArriving/FromDate'), FromDate+Keys.TAB)
 
-WebUI.setText(findTestObject('Report/StatementOfCarsArriving/ToDate'), ToDate)
+WebUI.setText(findTestObject('Report/StatementOfCarsArriving/ToDate'), ToDate+Keys.TAB)
 
 WebUI.selectOptionByLabel(findTestObject('Report/StatementOfCarsArriving/StatusDropdown'), 'Paid', false)
 
