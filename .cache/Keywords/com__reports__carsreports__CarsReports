@@ -1,18 +1,16 @@
 {
-  "keywordFileContentHash": "BA90EEB783F70725DEFC23C19F46DD21",
+  "keywordFileContentHash": "F5D2BB947641A056DE273766115D2F91",
   "keywordClasses": [
     {
       "name": "com.reports.carsreports.CarsReports",
       "keywordMethods": [
         {
           "name": "VerifyCopyButton",
-          "parameters": [],
-          "javadoc": "/**\r\n\t * Verify Copy Button\r\n\t */"
+          "parameters": []
         },
         {
           "name": "VerifyingOrder",
-          "parameters": [],
-          "javadoc": "/**\r\n\t * Verifying order\r\n\t */"
+          "parameters": []
         },
         {
           "name": "verifyShowEntry",
@@ -43,13 +41,11 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify Show Entries\r\n\t */"
+          ]
         },
         {
           "name": "verifyTextinRows",
-          "parameters": [],
-          "javadoc": "/**\r\n\t * Verify visibility of given text in all rows\r\n\t *\r\n\t */"
+          "parameters": []
         },
         {
           "name": "verifyPagination",
@@ -93,8 +89,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify pagination\r\n\t *\r\n\t */"
+          ]
         },
         {
           "name": "selectStatus",
@@ -112,8 +107,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Select Status\r\n\t *\r\n\t */"
+          ]
         },
         {
           "name": "VerifyPurchaseOnFilter",
@@ -144,8 +138,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify Purchase on Filter\r\n\t */"
+          ]
         },
         {
           "name": "VerifyCreatedDateFilter",
@@ -176,8 +169,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify Created Date Filter\r\n\t */"
+          ]
         },
         {
           "name": "VerifyStatusFilter",
@@ -195,8 +187,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify Status Filter\r\n\t */"
+          ]
         },
         {
           "name": "VerifyAuctionFilter",
@@ -214,11 +205,47 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify Auction Filter\r\n\t */"
+          ]
+        },
+        {
+          "name": "verifyTextFileData",
+          "parameters": [
+            {
+              "name": "keys",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.util.Map",
+                "unresolvedClassName": "Map",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [
+                  {
+                    "fullClassName": "java.lang.String",
+                    "unresolvedClassName": "String",
+                    "isArray": false,
+                    "isGnericsPlaceHolder": false,
+                    "hasImmutableClassName": false,
+                    "genericsTypes": [],
+                    "errorOnParsing": false
+                  },
+                  {
+                    "fullClassName": "java.lang.String",
+                    "unresolvedClassName": "String",
+                    "isArray": false,
+                    "isGnericsPlaceHolder": false,
+                    "hasImmutableClassName": false,
+                    "genericsTypes": [],
+                    "errorOnParsing": false
+                  }
+                ],
+                "errorOnParsing": false
+              }
+            }
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

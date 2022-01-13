@@ -6,14 +6,23 @@ import java.awt.Toolkit
 import java.awt.datatransfer.Clipboard
 import java.awt.datatransfer.DataFlavor
 import java.awt.datatransfer.StringSelection
+import java.text.NumberFormat
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
+import org.apache.poi.ss.usermodel.Cell
+import org.apache.poi.ss.usermodel.Row
+import org.apache.poi.xssf.usermodel.XSSFRow
+import org.apache.poi.xssf.usermodel.XSSFSheet
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.ui.Select
 
 import com.kms.katalon.core.annotation.Keyword
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.driver.DriverFactory
@@ -208,7 +217,7 @@ public class CarsReports {
 		WebUI.sendKeys(findTestObject("Object Repository/Report/CarsReports/StatusDropdown"), status)
 		webDriver.findElement(By.xpath("//li[text()='"+status+"']")).click()
 	}
-	
+
 	/**
 	 * Verify Purchase on Filter
 	 */
@@ -230,7 +239,7 @@ public class CarsReports {
 				KeywordUtil.markError("Purchase Date "+actualDate+" not in the given range")
 		}
 	}
-	
+
 	/**
 	 * Verify Created Date Filter
 	 */
@@ -257,7 +266,7 @@ public class CarsReports {
 				KeywordUtil.markError("Created Date "+actualDate+" not in the given range")
 		}
 	}
-	
+
 	/**
 	 * Verify Status Filter
 	 */
@@ -272,7 +281,7 @@ public class CarsReports {
 				KeywordUtil.markError("Status "+status+" not found in row "+(i+1)+" Actual : "+actualStatus)
 		}
 	}
-	
+
 	/**
 	 * Verify Auction Filter
 	 */
@@ -287,4 +296,111 @@ public class CarsReports {
 				KeywordUtil.markError("Auction "+auction+" not found in row "+(i+1)+" Actual : "+actualauction)
 		}
 	}
+
+	/**
+	 * Verify Excel File Data
+	 *
+	 */
+	@Keyword
+	def verifyTextFileData(Map<String,String> keys) {
+		KeywordUtil.logInfo("Verifying excel file data")
+		WebDriver webDriver = DriverFactory.getWebDriver()
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+
+		int expTotalColCount=webDriver.findElements(By.tagName("th")).size()
+		int expTotalRowCount=webDriver.findElements(By.tagName("tr")).size()-1
+
+		String ProjectDirectory=RunConfiguration.getProjectDir()
+		String excelFileLocation=ProjectDirectory+"/Download/"+keys.get("FileName")
+		excelFileLocation=excelFileLocation.replace('/', '\\')
+		FileInputStream fis=new FileInputStream(new File(excelFileLocation));
+		XSSFWorkbook wb = new XSSFWorkbook(fis);
+		XSSFSheet sheet = wb.getSheetAt(0);
+		XSSFRow row = sheet.getRow(0);
+		
+		KeywordUtil.logInfo("Verifying headers")
+		String value=sheet.getRow(0).getCell(4).getStringCellValue().trim()
+		if(!value.equals("Cars Reports"))
+			KeywordUtil.markError("Cars Reports heading is not found. Actual : "+value)
+		String expectedValue=keys.get("Date")
+		value=sheet.getRow(2).getCell(0).getStringCellValue().trim()
+		expectedValue="Date : "+expectedValue
+		if(!value.equals(expectedValue))
+			KeywordUtil.markError("Date "+expectedValue+" is not found. Actual : "+value)
+		expectedValue=keys.get("FromDate")
+		value=sheet.getRow(2).getCell(1).getStringCellValue().trim()
+		expectedValue="From: "+expectedValue
+		if(!value.equals(expectedValue))
+			KeywordUtil.markError("From Date "+expectedValue+" is not found. Actual : "+value)
+		expectedValue="To: "+keys.get("ToDate")
+		value=sheet.getRow(3).getCell(1).getStringCellValue().trim()
+		if(!value.equals(expectedValue))
+			KeywordUtil.markError("To Date "+expectedValue+" is not found. Actual : "+value)
+		expectedValue="Auction : "+keys.get("Auction")
+		value=sheet.getRow(3).getCell(2).getStringCellValue().trim()
+		if(!value.equals(expectedValue))
+			KeywordUtil.markError("Auction "+expectedValue+" is not found. Actual : "+value)
+		expectedValue="Status : "+keys.get("Status")
+		value=sheet.getRow(2).getCell(4).getStringCellValue().trim()
+		if(!value.equals(expectedValue))
+			KeywordUtil.markError("Status "+expectedValue+" is not found. Actual : "+value)
+		expectedValue="Country : "+keys.get("Country")
+		value=sheet.getRow(3).getCell(4).getStringCellValue().trim()
+		if(!value.equals(expectedValue))
+			KeywordUtil.markError("Country "+expectedValue+" is not found. Actual : "+value)
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-M-d");
+		LocalDateTime now = LocalDateTime.now()
+		expectedValue="Exported Date : "+dtf.format(now)
+		value=sheet.getRow(1).getCell(4).getStringCellValue().trim()
+		if(!value.equals(expectedValue))
+			KeywordUtil.markError("Exported Date "+expectedValue+" is not found. Actual : "+value)
+
+		Iterator<Row> itr = sheet.iterator();
+		int rowCounter=0;
+		while (itr.hasNext()) {
+			row = itr.next();
+			if(rowCounter<4) {
+				rowCounter++
+				continue;
+			}
+			int colCounter=0;
+			Iterator<Cell> cellIterator = row.cellIterator();
+			while (cellIterator.hasNext()) {
+				Cell cell = cellIterator.next();
+				if(colCounter==1) {
+					colCounter++
+					continue
+				}
+				String expectedtext="";
+				String actualText="";
+				switch (cell.getCellType()) {
+					case Cell.CELL_TYPE_STRING:
+						actualText=cell.getStringCellValue()
+						if(rowCounter>4 && (colCounter==3||colCounter==4||colCounter==5))
+						actualText=actualText.replace(" ", "").trim()
+						if(colCounter==10)
+							actualText=actualText.replace("  ", " ").trim()
+						break;
+					case Cell.CELL_TYPE_NUMERIC:
+						double d=  cell.getNumericCellValue()
+						actualText=d<1000?((int)d).toString():formatter.format(d)
+						break;
+				}
+				if(rowCounter==4) {
+					expectedtext=webDriver.findElement(By.tagName("tr")).findElements(By.tagName("th")).get(colCounter).text.trim();
+				}
+				else {
+					expectedtext=webDriver.findElements(By.tagName("tr")).get(rowCounter-4).findElements(By.tagName("td")).get(colCounter).text.replace("\n","").trim();
+					if(colCounter==3||colCounter==4||colCounter==5)
+						expectedtext=expectedtext.replace(" ", "").trim()
+				}
+				if(!expectedtext.equals(actualText))
+					KeywordUtil.markError("Data is not matched in excel sheet. Expected : "+expectedtext+" Actual : "+actualText+" Index : ["+rowCounter+","+colCounter+"]");
+				colCounter++;
+			}
+			KeywordUtil.logInfo("Row # "+(rowCounter+1)+" is verified successfully")
+			rowCounter++;
+		}
+	}
+
 }
