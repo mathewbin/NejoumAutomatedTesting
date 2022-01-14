@@ -35,7 +35,7 @@ WebUI.click(findTestObject('HomePage/Report-Account Report'))
 
 WebUI.click(findTestObject('HomePage/Account Report - DWP_Report'))
 
-WebUI.selectOptionByValue(findTestObject('Report/DWPReport/ShowDropdown'), RowCount, false)
+WebUI.selectOptionByValue(findTestObject('Report/Account Reports/DWPReport/ShowDropdown'), RowCount, false)
 
-CustomKeywords.'com.reports.accountreports.DwpReport.verifyShowEntry'(findTestObject('Report/DWPReport/ShowDropdown'), RowCount)
+CustomKeywords.'com.reports.accountreports.DwpReport.verifyShowEntry'(findTestObject('Report/Account Reports/DWPReport/ShowDropdown'), RowCount)
 

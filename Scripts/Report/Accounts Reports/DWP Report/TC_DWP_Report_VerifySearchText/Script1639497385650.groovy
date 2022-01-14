@@ -35,7 +35,7 @@ WebUI.click(findTestObject('HomePage/Report-Account Report'))
 
 WebUI.click(findTestObject('HomePage/Account Report - DWP_Report'))
 
-WebUI.setText(findTestObject('Report/DWPReport/SearchInputTxt'), Text)
+WebUI.setText(findTestObject('Report/Account Reports/DWPReport/SearchInputTxt'), Text)
 
 WebUI.delay(5)
 

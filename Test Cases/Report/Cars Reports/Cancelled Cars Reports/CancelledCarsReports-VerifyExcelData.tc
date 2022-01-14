@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CancelledCarsReports-VerifyExcelData</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>32548178-159a-477f-9a74-883124125e3a</testCaseGuid>
+   <variable>
+      <defaultValue>'01/01/2022'</defaultValue>
+      <description></description>
+      <id>57378096-094b-4f8c-aa86-d4e192779b33</id>
+      <masked>false</masked>
+      <name>FromDate</name>
+   </variable>
+   <variable>
+      <defaultValue>'01/31/2022'</defaultValue>
+      <description></description>
+      <id>09fe8030-18fb-449b-ac3a-abb3c1ca83a7</id>
+      <masked>false</masked>
+      <name>ToDate</name>
+   </variable>
+   <variable>
+      <defaultValue>'Paid'</defaultValue>
+      <description></description>
+      <id>d9f26623-daa8-4d67-8e8a-fa0f6d1ca3d1</id>
+      <masked>false</masked>
+      <name>Status</name>
+   </variable>
+</TestCaseEntity>

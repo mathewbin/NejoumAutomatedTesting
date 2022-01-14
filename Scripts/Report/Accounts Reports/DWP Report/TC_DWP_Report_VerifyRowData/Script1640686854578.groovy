@@ -37,7 +37,7 @@ WebUI.click(findTestObject('HomePage/Account Report - DWP_Report'))
 
 WebUI.delay(5)
 
-WebUI.selectOptionByValue(findTestObject('Report/DWPReport/ShowDropdown'), '200', false)
+WebUI.selectOptionByValue(findTestObject('Report/Account Reports/DWPReport/ShowDropdown'), '200', false)
 
 WebUI.delay(5)
 

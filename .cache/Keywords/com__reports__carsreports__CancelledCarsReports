@@ -1,0 +1,87 @@
+{
+  "keywordFileContentHash": "373FE919265036C184229F77FCAD8CAC",
+  "keywordClasses": [
+    {
+      "name": "com.reports.carsreports.CancelledCarsReports",
+      "keywordMethods": [
+        {
+          "name": "VerifyCopyButton",
+          "parameters": []
+        },
+        {
+          "name": "VerifyingOrder",
+          "parameters": []
+        },
+        {
+          "name": "verifyTextinRows",
+          "parameters": []
+        },
+        {
+          "name": "VerifyAuctionFilter",
+          "parameters": [
+            {
+              "name": "auction",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "VerifyPurchaseOnFilter",
+          "parameters": [
+            {
+              "name": "dateInput",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.util.List",
+                "unresolvedClassName": "List",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [
+                  {
+                    "fullClassName": "java.lang.String",
+                    "unresolvedClassName": "String",
+                    "isArray": false,
+                    "isGnericsPlaceHolder": false,
+                    "hasImmutableClassName": false,
+                    "genericsTypes": [],
+                    "errorOnParsing": false
+                  }
+                ],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "verifyTextFileData",
+          "parameters": [
+            {
+              "name": "fileName",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "javadocParsed": false
+}

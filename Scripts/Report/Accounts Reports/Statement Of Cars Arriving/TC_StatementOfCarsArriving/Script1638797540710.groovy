@@ -35,31 +35,31 @@ WebUI.click(findTestObject('HomePage/Report-Account Report'))
 
 WebUI.click(findTestObject('HomePage/Account Report - Statement of cars arriving'))
 
-WebUI.selectOptionByIndex(findTestObject('Report/StatementOfCarsArriving/CustomerDropdown'), 3)
+WebUI.selectOptionByIndex(findTestObject('Report/Account Reports/StatementOfCarsArriving/CustomerDropdown'), 3)
 
-WebUI.setText(findTestObject('Report/StatementOfCarsArriving/FromDate'), FromDate+Keys.TAB)
+WebUI.setText(findTestObject('Report/Account Reports/StatementOfCarsArriving/FromDate'), FromDate+Keys.TAB)
 
-WebUI.setText(findTestObject('Report/StatementOfCarsArriving/ToDate'), ToDate+Keys.TAB)
+WebUI.setText(findTestObject('Report/Account Reports/StatementOfCarsArriving/ToDate'), ToDate+Keys.TAB)
 
-WebUI.selectOptionByLabel(findTestObject('Report/StatementOfCarsArriving/StatusDropdown'), 'Paid', false)
+WebUI.selectOptionByLabel(findTestObject('Report/Account Reports/StatementOfCarsArriving/StatusDropdown'), 'Paid', false)
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/SearchButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/SearchButton'))
 
 CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.verifyRemainingColumnsForPaidStatus'()
 
-WebUI.selectOptionByLabel(findTestObject('Report/StatementOfCarsArriving/StatusDropdown'), 'UnPaid', false)
+WebUI.selectOptionByLabel(findTestObject('Report/Account Reports/StatementOfCarsArriving/StatusDropdown'), 'UnPaid', false)
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/SearchButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/SearchButton'))
 
 CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.verifyRemainingColumnsForUnPaidStatus'()
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/ExcelButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/ExcelButton'))
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/CSVButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/CSVButton'))
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/PDFButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/PDFButton'))
 
-WebUI.setText(findTestObject('Report/StatementOfCarsArriving/SearchInputTxt'), 'TOYOTA')
+WebUI.setText(findTestObject('Report/Account Reports/StatementOfCarsArriving/SearchInputTxt'), 'TOYOTA')
 
 WebUI.delay(10)
 

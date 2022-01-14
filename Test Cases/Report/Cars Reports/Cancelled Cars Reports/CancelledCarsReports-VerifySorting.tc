@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CancelledCarsReports-VerifySorting</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>0a79c0c6-4ad8-4fa9-9787-a9dc77af015d</testCaseGuid>
+</TestCaseEntity>

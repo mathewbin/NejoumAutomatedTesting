@@ -218,7 +218,7 @@ class StatementOfCarsArriving {
 		String resultBeforeClick = (String) clipboard.getData(DataFlavor.stringFlavor);
 		if(!resultBeforeClick.isEmpty())
 			KeywordUtil.markFailed("Clipboard text is not yet cleaned"+resultBeforeClick)
-		WebUI.click(findTestObject('Report/StatementOfCarsArriving/CopyButton'))
+		WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/CopyButton'))
 		WebUI.delay(1)
 		String resultAfterClick = (String) clipboard.getData(DataFlavor.stringFlavor);
 		if(resultBeforeClick.equals(resultAfterClick))

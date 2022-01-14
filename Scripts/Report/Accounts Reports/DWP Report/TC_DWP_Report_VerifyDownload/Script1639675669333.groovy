@@ -37,11 +37,11 @@ WebUI.click(findTestObject('HomePage/Account Report - DWP_Report'))
 
 WebUI.delay(5)
 
-WebUI.click(findTestObject('Report/DWPReport/CSVButton'))
+WebUI.click(findTestObject('Report/Account Reports/DWPReport/CSVButton'))
 
-WebUI.click(findTestObject('Report/DWPReport/PDFButton'))
+WebUI.click(findTestObject('Report/Account Reports/DWPReport/PDFButton'))
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/ExcelButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/ExcelButton'))
 
 WebUI.delay(10)
 

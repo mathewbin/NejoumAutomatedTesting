@@ -35,7 +35,7 @@ WebUI.click(findTestObject('HomePage/Report-Account Report'))
 
 WebUI.click(findTestObject('HomePage/Account Report - Limit'))
 
-WebUI.selectOptionByValue(findTestObject('Report/Limit/ShowDropdown'), '100', false)
+WebUI.selectOptionByValue(findTestObject('Report/Account Reports/Limit/ShowDropdown'), '100', false)
 
 CustomKeywords.'com.reports.accountreports.Limit.verifyRowData'(findTestData('Report/Limit/Row Data'))
 

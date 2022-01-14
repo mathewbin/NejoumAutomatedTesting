@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>FromDate</name>
+   <tag></tag>
+   <elementGuidId>06508c3b-3b90-4e6e-84d9-53b7f843fc6a</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//input[@id='dateto']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>#daily1</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>CSS</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>

@@ -157,7 +157,7 @@ public class CarsReports {
 		int randomNumber=random.nextInt(elements.size())
 		String text=elements.get(randomNumber).text.split(" ")[0]
 		KeywordUtil.logInfo("Total rows"+elements.size())
-		WebUI.sendKeys(findTestObject("Object Repository/Report/CarsReports/SearchInputTxt"), text)
+		WebUI.sendKeys(findTestObject("Report/CarsReports/All Cars Reports/SearchInputTxt"), text)
 		WebUI.delay(2)
 		elements = webDriver.findElements(By.xpath("//td[4]"));
 		boolean isSuccess=true;
@@ -214,7 +214,7 @@ public class CarsReports {
 	def selectStatus(String status) {
 		KeywordUtil.logInfo("Selecting Status")
 		WebDriver webDriver = DriverFactory.getWebDriver()
-		WebUI.sendKeys(findTestObject("Object Repository/Report/CarsReports/StatusDropdown"), status)
+		WebUI.sendKeys(findTestObject("Report/CarsReports/All Cars Reports/StatusDropdown"), status)
 		webDriver.findElement(By.xpath("//li[text()='"+status+"']")).click()
 	}
 
@@ -317,7 +317,7 @@ public class CarsReports {
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sheet = wb.getSheetAt(0);
 		XSSFRow row = sheet.getRow(0);
-		
+
 		KeywordUtil.logInfo("Verifying headers")
 		String value=sheet.getRow(0).getCell(4).getStringCellValue().trim()
 		if(!value.equals("Cars Reports"))
@@ -377,7 +377,7 @@ public class CarsReports {
 					case Cell.CELL_TYPE_STRING:
 						actualText=cell.getStringCellValue()
 						if(rowCounter>4 && (colCounter==3||colCounter==4||colCounter==5))
-						actualText=actualText.replace(" ", "").trim()
+							actualText=actualText.replace(" ", "").trim()
 						if(colCounter==10)
 							actualText=actualText.replace("  ", " ").trim()
 						break;

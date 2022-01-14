@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CancelledCarsReports-VerifyFilter</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5afae9d2-9348-4a29-96b8-258c9fb1c96c</testCaseGuid>
+   <variable>
+      <defaultValue>'01/01/2022'</defaultValue>
+      <description></description>
+      <id>a3fcc289-5a45-4ff9-a6d0-0ea64aa5d987</id>
+      <masked>false</masked>
+      <name>FromDate</name>
+   </variable>
+   <variable>
+      <defaultValue>'01/31/2022'</defaultValue>
+      <description></description>
+      <id>3089ac84-1dbd-4d7c-800b-6a8f41132037</id>
+      <masked>false</masked>
+      <name>ToDate</name>
+   </variable>
+</TestCaseEntity>

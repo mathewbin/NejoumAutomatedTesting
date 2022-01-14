@@ -35,17 +35,17 @@ WebUI.click(findTestObject('HomePage/Report-Account Report'))
 
 WebUI.click(findTestObject('HomePage/Account Report - Statement of cars arriving'))
 
-WebUI.selectOptionByIndex(findTestObject('Report/StatementOfCarsArriving/CustomerDropdown'), 3)
+WebUI.selectOptionByIndex(findTestObject('Report/Account Reports/StatementOfCarsArriving/CustomerDropdown'), 3)
 
-WebUI.selectOptionByLabel(findTestObject('Report/StatementOfCarsArriving/StatusDropdown'), 'Paid', false)
+WebUI.selectOptionByLabel(findTestObject('Report/Account Reports/StatementOfCarsArriving/StatusDropdown'), 'Paid', false)
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/SearchButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/SearchButton'))
 
 CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.verifyRemainingColumnsForPaidStatus'()
 
-WebUI.selectOptionByLabel(findTestObject('Report/StatementOfCarsArriving/StatusDropdown'), 'UnPaid', false)
+WebUI.selectOptionByLabel(findTestObject('Report/Account Reports/StatementOfCarsArriving/StatusDropdown'), 'UnPaid', false)
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/SearchButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/SearchButton'))
 
 CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.verifyRemainingColumnsForUnPaidStatus'()
 

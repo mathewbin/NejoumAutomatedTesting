@@ -35,9 +35,9 @@ WebUI.click(findTestObject('HomePage/Report-Account Report'))
 
 WebUI.click(findTestObject('HomePage/Account Report - Statement of cars arriving'))
 
-WebUI.selectOptionByIndex(findTestObject('Report/StatementOfCarsArriving/CustomerDropdown'), 3)
+WebUI.selectOptionByIndex(findTestObject('Report/Account Reports/StatementOfCarsArriving/CustomerDropdown'), 3)
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/SearchButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/SearchButton'))
 
 WebUI.delay(10)
 

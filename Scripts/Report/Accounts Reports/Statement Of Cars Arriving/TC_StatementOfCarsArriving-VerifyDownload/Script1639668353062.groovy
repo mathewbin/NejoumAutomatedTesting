@@ -35,15 +35,15 @@ WebUI.click(findTestObject('HomePage/Report-Account Report'))
 
 WebUI.click(findTestObject('HomePage/Account Report - Statement of cars arriving'))
 
-WebUI.selectOptionByIndex(findTestObject('Report/StatementOfCarsArriving/CustomerDropdown'), 3)
+WebUI.selectOptionByIndex(findTestObject('Report/Account Reports/StatementOfCarsArriving/CustomerDropdown'), 3)
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/SearchButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/SearchButton'))
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/CSVButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/CSVButton'))
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/PDFButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/PDFButton'))
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/ExcelButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/ExcelButton'))
 
 WebUI.delay(10)
 
@@ -53,13 +53,13 @@ CustomKeywords.'com.reports.accountreports.CommonUtils.VerifyFileDownloaded'('Cu
 
 CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.verifyTextFileData'('Customer Car Details!.xlsx')
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/PrintButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/PrintButton'))
 
 WebUI.closeWindowIndex(1)
 
 WebUI.switchToWindowIndex(0)
 
-WebUI.click(findTestObject('Report/StatementOfCarsArriving/CopyButton'))
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/CopyButton'))
 
 CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.VerifyCopyButton'()
 
