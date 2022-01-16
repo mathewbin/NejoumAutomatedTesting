@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CarsSoldReport-VerifyExcelData</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>dba1e154-2b63-4f23-a12a-60c4f36feceb</testCaseGuid>
+   <variable>
+      <defaultValue>'01/01/2022'</defaultValue>
+      <description></description>
+      <id>e7552b28-1d0d-441a-8650-385a966e6022</id>
+      <masked>false</masked>
+      <name>FromDate</name>
+   </variable>
+   <variable>
+      <defaultValue>'01/31/2022'</defaultValue>
+      <description></description>
+      <id>023e9882-3786-42ae-b7f3-df662880b42c</id>
+      <masked>false</masked>
+      <name>ToDate</name>
+   </variable>
+</TestCaseEntity>

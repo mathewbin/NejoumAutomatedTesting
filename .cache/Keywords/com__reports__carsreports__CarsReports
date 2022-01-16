@@ -6,11 +6,13 @@
       "keywordMethods": [
         {
           "name": "VerifyCopyButton",
-          "parameters": []
+          "parameters": [],
+          "javadoc": "/**\r\n\t * Verify Copy Button\r\n\t */"
         },
         {
           "name": "VerifyingOrder",
-          "parameters": []
+          "parameters": [],
+          "javadoc": "/**\r\n\t * Verifying order\r\n\t */"
         },
         {
           "name": "verifyShowEntry",
@@ -41,11 +43,13 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify Show Entries\r\n\t */"
         },
         {
           "name": "verifyTextinRows",
-          "parameters": []
+          "parameters": [],
+          "javadoc": "/**\r\n\t * Verify visibility of given text in all rows\r\n\t *\r\n\t */"
         },
         {
           "name": "verifyPagination",
@@ -89,7 +93,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify pagination\r\n\t *\r\n\t */"
         },
         {
           "name": "selectStatus",
@@ -107,7 +112,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Select Status\r\n\t *\r\n\t */"
         },
         {
           "name": "VerifyPurchaseOnFilter",
@@ -138,7 +144,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify Purchase on Filter\r\n\t */"
         },
         {
           "name": "VerifyCreatedDateFilter",
@@ -169,7 +176,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify Created Date Filter\r\n\t */"
         },
         {
           "name": "VerifyStatusFilter",
@@ -187,7 +195,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify Status Filter\r\n\t */"
         },
         {
           "name": "VerifyAuctionFilter",
@@ -205,7 +214,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify Auction Filter\r\n\t */"
         },
         {
           "name": "verifyTextFileData",
@@ -242,10 +252,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify Excel File Data\r\n\t *\r\n\t */"
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

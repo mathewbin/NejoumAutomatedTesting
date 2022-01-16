@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CarsSoldReport-VerifyFilter</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5a18e70c-cab5-4b34-a778-0a64df7ac274</testCaseGuid>
+   <variable>
+      <defaultValue>'01/01/2022'</defaultValue>
+      <description></description>
+      <id>a39bd73b-ef55-44f5-8b3d-92be783a5244</id>
+      <masked>false</masked>
+      <name>FromDate</name>
+   </variable>
+   <variable>
+      <defaultValue>'01/31/2022'</defaultValue>
+      <description></description>
+      <id>1e591b0e-30a2-46c1-b454-677768e2f675</id>
+      <masked>false</masked>
+      <name>ToDate</name>
+   </variable>
+</TestCaseEntity>

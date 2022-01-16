@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>ExcelButton</name>
+   <tag></tag>
+   <elementGuidId>37b51d64-038c-4e9e-9204-066f86730889</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//span[text()='Excel']/parent::a</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>a.buttons-excel</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>CSS</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>

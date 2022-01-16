@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CarsSoldReport-VerifyDownload</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>88c7c64e-abc7-49b5-a290-dd0b797ca68d</testCaseGuid>
+</TestCaseEntity>

@@ -211,7 +211,7 @@ public class CancelledCarsReports {
 	def verifyTextFileData(String fileName) {
 		KeywordUtil.logInfo("Verifying excel file data")
 		WebDriver webDriver = DriverFactory.getWebDriver()
-		
+
 		int expTotalColCount=webDriver.findElements(By.tagName("th")).size()
 		int expTotalRowCount=webDriver.findElements(By.tagName("tr")).size()-1
 
@@ -223,7 +223,7 @@ public class CancelledCarsReports {
 		XSSFSheet sheet = wb.getSheetAt(0);
 		XSSFRow row = sheet.getRow(0);
 
-		
+
 		Iterator<Row> itr = sheet.iterator();
 		int rowCounter=0;
 		while (itr.hasNext()) {
@@ -244,7 +244,7 @@ public class CancelledCarsReports {
 						if(colCounter==3)
 							actualText=actualText.replace(" ", "").trim()
 						if(colCounter==10)
-								actualText=actualText.replace("  ", " ").trim()
+							actualText=actualText.replace("  ", " ").trim()
 						break;
 					case Cell.CELL_TYPE_NUMERIC:
 						double d=  cell.getNumericCellValue()

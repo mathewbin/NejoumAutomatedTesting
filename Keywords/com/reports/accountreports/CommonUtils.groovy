@@ -35,7 +35,7 @@ public class CommonUtils {
 		if(!new File(DownloadFolderPath+fileName).exists())
 			KeywordUtil.markFailed("File "+fileName+" is not downloaded")
 	}
-	
+
 	/**
 	 * Dismiss unnecessary notication
 	 */
@@ -45,8 +45,9 @@ public class CommonUtils {
 		WebDriver webDriver = DriverFactory.getWebDriver()
 
 		webDriver.findElement(By.tagName("body")).sendKeys(Keys.ESCAPE)
-		while(webDriver.findElements(By.xpath("//button[text()='OK']")).size()>0) {
-			webDriver.findElement(By.xpath("//button[text()='OK']")).click()
+		while(webDriver.findElements(By.cssSelector("button.swal2-confirm")).size()>0) {
+			webDriver.findElement(By.cssSelector("button.swal2-confirm")).click()
+			KeywordUtil.logInfo("Dismissed notification")
 			Thread.sleep(2000)
 		}
 	}

@@ -160,9 +160,6 @@ public class CarsEnteredToday {
 		if(!previousButton.getAttribute("class").contains("disabled"))
 			KeywordUtil.markFailed("Previous button is enable")
 		int counter=perPageEntry>totalRows?totalRows:perPageEntry
-		//KeywordUtil.logInfo("Per page rows : "+perPageEntry)
-		//KeywordUtil.logInfo("Total rows : "+totalRows)
-		//KeywordUtil.logInfo("Total rows : "+totalRows)
 		while(counter<totalRows) {
 			nextButton.click()
 			nextButton=WebUI.findWebElement(findTestObject("Object Repository/Manager Reports/Car Reports/CarInsertedToday/NextButton"));

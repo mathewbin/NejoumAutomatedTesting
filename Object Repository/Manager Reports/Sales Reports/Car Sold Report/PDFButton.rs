@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>PDFButton</name>
+   <tag></tag>
+   <elementGuidId>198137ac-2c6a-4542-a8f3-80b3529e8949</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//span[text()='CSV']/parent::a</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>a.buttons-pdf</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>CSS</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>
