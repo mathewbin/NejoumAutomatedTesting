@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CarMissingPrice-VerifyExcelData</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bffb2620-fe25-463b-9153-dacfec2837b3</testCaseGuid>
+</TestCaseEntity>

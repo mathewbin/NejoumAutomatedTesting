@@ -229,7 +229,7 @@ public class CarSoldReport {
 	def verifyTextFileData(List<TestObject> dropdownElements,Map<String,Object> keys) {
 		KeywordUtil.logInfo("Verifying excel file data")
 		WebDriver webDriver = DriverFactory.getWebDriver()
-		
+
 		int expTotalColCount=webDriver.findElements(By.tagName("th")).size()
 		int expTotalRowCount=webDriver.findElements(By.tagName("tr")).size()-1
 
@@ -306,7 +306,7 @@ public class CarSoldReport {
 					if(colCounter==0||colCounter==4) {
 						double d= Double.parseDouble(expectedtext)
 						expectedtext=d<1000?((int)d).toString():d.toString()
-						}
+					}
 				}
 				if(!expectedtext.replace(" ", "").equals(actualText.replace(" ", "")))
 					KeywordUtil.logInfo("Data is not matched in excel sheet. Expected : "+expectedtext+" Actual : "+actualText+" Index : ["+rowCounter+","+colCounter+"]");

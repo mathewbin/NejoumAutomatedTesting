@@ -1,13 +1,30 @@
 {
-  "keywordFileContentHash": "5ECA815BD6C921E90D2AAFBB804306F8",
+  "keywordFileContentHash": "0196D87C6193AE9F971F78A196DCFF01",
   "keywordClasses": [
     {
-      "name": "com.managerreports.salesreports.CarSoldReport",
+      "name": "com.managerreports.autoreports.CarMissingPrices",
       "keywordMethods": [
         {
+          "name": "verifyTextinRows",
+          "parameters": [
+            {
+              "name": "searchInputField",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
           "name": "VerifyingOrder",
-          "parameters": [],
-          "javadoc": "/**\r\n\t * Verifying order\r\n\t */"
+          "parameters": []
         },
         {
           "name": "verifyPagination",
@@ -35,75 +52,17 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify pagination\r\n\t *\r\n\t */"
+          ]
         },
         {
-          "name": "verifyTextinRows",
+          "name": "verifyShowEntry",
           "parameters": [
             {
-              "name": "searchInputField",
+              "name": "dropdownObject",
               "initialExpression": "",
               "type": {
                 "fullClassName": "com.kms.katalon.core.testobject.TestObject",
                 "unresolvedClassName": "TestObject",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": "/**\r\n\t * Verify visibility of given text in all rows\r\n\t *\r\n\t */"
-        },
-        {
-          "name": "VerifyCustomerFilter",
-          "parameters": [
-            {
-              "name": "customerDropdownElement",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
-                "unresolvedClassName": "TestObject",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": "/**  \r\n\t * Verify Customer filter\r\n\t *\r\n\t */"
-        },
-        {
-          "name": "VerifySoldByFilter",
-          "parameters": [
-            {
-              "name": "soldDropdownElement",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
-                "unresolvedClassName": "TestObject",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": "/**\r\n\t * Verify Sold By filter\r\n\t *\r\n\t */"
-        },
-        {
-          "name": "VerifyCreatedDateFilter",
-          "parameters": [
-            {
-              "name": "dateInput1",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "java.lang.String",
-                "unresolvedClassName": "String",
                 "isArray": false,
                 "isGnericsPlaceHolder": false,
                 "hasImmutableClassName": false,
@@ -112,7 +71,38 @@
               }
             },
             {
-              "name": "dateInput2",
+              "name": "rowCount",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "verifyTextFileData",
+          "parameters": [
+            {
+              "name": "statusDropdownElements",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "fileName",
               "initialExpression": "",
               "type": {
                 "fullClassName": "java.lang.String",
@@ -124,14 +114,13 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify Created Date Filter\r\n\t */"
+          ]
         },
         {
-          "name": "verifyTextFileData",
+          "name": "verifyFilter",
           "parameters": [
             {
-              "name": "dropdownElements",
+              "name": "testObjects",
               "initialExpression": "",
               "type": {
                 "fullClassName": "java.util.List",
@@ -152,44 +141,11 @@
                 ],
                 "errorOnParsing": false
               }
-            },
-            {
-              "name": "keys",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "java.util.Map",
-                "unresolvedClassName": "Map",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [
-                  {
-                    "fullClassName": "java.lang.String",
-                    "unresolvedClassName": "String",
-                    "isArray": false,
-                    "isGnericsPlaceHolder": false,
-                    "hasImmutableClassName": false,
-                    "genericsTypes": [],
-                    "errorOnParsing": false
-                  },
-                  {
-                    "fullClassName": "java.lang.Object",
-                    "unresolvedClassName": "Object",
-                    "isArray": false,
-                    "isGnericsPlaceHolder": false,
-                    "hasImmutableClassName": false,
-                    "genericsTypes": [],
-                    "errorOnParsing": false
-                  }
-                ],
-                "errorOnParsing": false
-              }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify Excel File Data\r\n\t *\r\n\t */"
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

@@ -20,14 +20,16 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify File Existence\r\n\t * @param table File Name\r\n\t */"
         },
         {
           "name": "DismissUnnecessaryNotification",
-          "parameters": []
+          "parameters": [],
+          "javadoc": "/**\r\n\t * Dismiss unnecessary notication\r\n\t */"
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
