@@ -31,21 +31,16 @@ WebUI.click(findTestObject('HomePage/Manager Reports'))
 
 WebUI.click(findTestObject('Manager Reports/Auto Reports/CarMissingReport'))
 
-WebUI.click(findTestObject('Manager Reports/Auto Reports/SearchBtn'))
+WebUI.click(findTestObject('Manager Reports/Auto Reports/Car Missing Price/SearchBtn'))
 
 WebUI.delay(5)
 
 CustomKeywords.'com.reports.accountreports.CommonUtils.DismissUnnecessaryNotification'()
 
-WebUI.selectOptionByValue(findTestObject('Manager Reports/Auto Reports/ShowDropdown'), '50', false)
+WebUI.selectOptionByValue(findTestObject('Manager Reports/Auto Reports/Car Missing Price/ShowDropdown'), '-1', false)
 
-CustomKeywords.'com.managerreports.autoreports.CarMissingPrices.verifyShowEntry'(findTestObject('Manager Reports/Auto Reports/ShowDropdown'), 
-    50)
+WebUI.delay(5)
 
-CustomKeywords.'com.managerreports.autoreports.CarMissingPrices.VerifyingOrder'()
-
-CustomKeywords.'com.managerreports.autoreports.CarMissingPrices.verifyPagination'([findTestObject('Manager Reports/Auto Reports/NextButton')
-        , findTestObject('Manager Reports/Auto Reports/PreviousButton')])
-
-CustomKeywords.'com.managerreports.autoreports.CarMissingPrices.verifyTextinRows'(findTestObject('Manager Reports/Auto Reports/SearchInputTxt'))
+CustomKeywords.'com.managerreports.autoreports.CarMissingPrices.verifyFilter'([findTestObject('Manager Reports/Auto Reports/Car Missing Price/StatusDropdown')
+        , findTestObject('Manager Reports/Auto Reports/Car Missing Price/SearchBtn')])
 

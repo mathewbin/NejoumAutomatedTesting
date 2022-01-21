@@ -144,7 +144,7 @@ public class CarMissingPrices {
 			previousButton=WebUI.findWebElement(PageButtons.get(1));
 		}
 	}
-	
+
 	/**
 	 * Verify Show Entries
 	 */
@@ -162,7 +162,7 @@ public class CarMissingPrices {
 		else
 			KeywordUtil.logInfo("Show Entry Verified for Row Count "+rowCount);
 	}
-	
+
 	/**
 	 * Verify Excel File Data
 	 *
@@ -240,7 +240,7 @@ public class CarMissingPrices {
 			rowCounter++;
 		}
 	}
-	
+
 	/**
 	 * Verify Filter
 	 */
@@ -257,7 +257,7 @@ public class CarMissingPrices {
 			for(int j=0;j<cols.size();j++) {
 				if(Float.parseFloat(cols.get(j).text)!=0)
 					KeywordUtil.markFailed("Filter failed for index "+i+"\t"+j+"\t"+cols.get(j).text)
-			}	
+			}
 		}
 	}
 }

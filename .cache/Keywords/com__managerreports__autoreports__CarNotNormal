@@ -1,0 +1,37 @@
+{
+  "keywordFileContentHash": "6F71F0A97779BA97293E434F568784D7",
+  "keywordClasses": [
+    {
+      "name": "com.managerreports.autoreports.CarNotNormal",
+      "keywordMethods": [
+        {
+          "name": "verifyTextFileData",
+          "parameters": [
+            {
+              "name": "fileName",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "VerifyingOrder",
+          "parameters": []
+        },
+        {
+          "name": "verifySearch",
+          "parameters": []
+        }
+      ]
+    }
+  ],
+  "javadocParsed": false
+}

@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "0196D87C6193AE9F971F78A196DCFF01",
+  "keywordFileContentHash": "86FEAB3731936DB0DE1256868C69DD84",
   "keywordClasses": [
     {
       "name": "com.managerreports.autoreports.CarMissingPrices",
@@ -20,11 +20,13 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify visibility of given text in all rows\r\n\t *\r\n\t */"
         },
         {
           "name": "VerifyingOrder",
-          "parameters": []
+          "parameters": [],
+          "javadoc": "/**\r\n\t * Verifying order\r\n\t */"
         },
         {
           "name": "verifyPagination",
@@ -52,7 +54,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify pagination\r\n\t *\r\n\t */"
         },
         {
           "name": "verifyShowEntry",
@@ -83,7 +86,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify Show Entries\r\n\t */"
         },
         {
           "name": "verifyTextFileData",
@@ -114,7 +118,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify Excel File Data\r\n\t *\r\n\t */"
         },
         {
           "name": "verifyFilter",
@@ -142,10 +147,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify Filter\r\n\t */"
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

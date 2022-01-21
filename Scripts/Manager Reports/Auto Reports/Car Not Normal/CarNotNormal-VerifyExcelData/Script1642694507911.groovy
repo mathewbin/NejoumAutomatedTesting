@@ -29,29 +29,21 @@ WebUI.refresh()
 
 WebUI.click(findTestObject('HomePage/Manager Reports'))
 
-WebUI.click(findTestObject('Manager Reports/Auto Reports/CarMissingReport'))
+WebUI.click(findTestObject('Manager Reports/Auto Reports/CarNotNormalReport'))
 
-WebUI.click(findTestObject('Manager Reports/Auto Reports/SearchBtn'))
+WebUI.click(findTestObject('Manager Reports/Auto Reports/Car Not Normal/Button_BigCar'))
 
 WebUI.delay(5)
 
 CustomKeywords.'com.reports.accountreports.CommonUtils.DismissUnnecessaryNotification'()
 
+WebUI.selectOptionByValue(findTestObject('Manager Reports/Auto Reports/Car Missing Price/ShowDropdown'), '-1', false)
+
 WebUI.click(findTestObject('Manager Reports/Sales Reports/Car Sold Report/ExcelButton'))
 
-WebUI.click(findTestObject('Manager Reports/Sales Reports/Car Sold Report/PDFButton'))
+WebUI.delay(5)
 
-WebUI.click(findTestObject('Manager Reports/Sales Reports/Car Sold Report/CopyButton'))
+CustomKeywords.'com.managerreports.autoreports.CarNotNormal.verifyTextFileData'('حالة السيارة.xlsx')
 
-CustomKeywords.'com.managerreports.carreports.CarsEnteredToday.VerifyCopyButton'()
-
-WebUI.click(findTestObject('Manager Reports/Sales Reports/Car Sold Report/PrintButton'))
-
-WebUI.closeWindowIndex(1)
-
-WebUI.switchToWindowIndex(0)
-
-CustomKeywords.'com.reports.accountreports.CommonUtils.VerifyFileDownloaded'('Cars with missing prices.xlsx')
-
-CustomKeywords.'com.reports.accountreports.CommonUtils.VerifyFileDownloaded'('Cars with missing prices.pdf')
+WebUI.closeBrowser()
 

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>PreviousButton</name>
+   <name>NextButton</name>
    <tag></tag>
-   <elementGuidId>d5b28634-5ea0-4056-97c9-15d1e22aa10a</elementGuidId>
+   <elementGuidId>c147bafc-cace-4f7a-ad34-b6316080e1c7</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
          <value>//input[@type='submit']</value>
       </entry>
       <entry>
-         <key>CSS</key>
-         <value>#tableLengthAndBTN_previous</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>CSS</key>
+         <value>#tableLengthAndBTN_next</value>
       </entry>
    </selectorCollection>
    <selectorMethod>CSS</selectorMethod>

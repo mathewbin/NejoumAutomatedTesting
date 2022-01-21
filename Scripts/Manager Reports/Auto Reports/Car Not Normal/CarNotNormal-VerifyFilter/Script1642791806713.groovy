@@ -29,18 +29,15 @@ WebUI.refresh()
 
 WebUI.click(findTestObject('HomePage/Manager Reports'))
 
-WebUI.click(findTestObject('Manager Reports/Auto Reports/CarMissingReport'))
-
-WebUI.click(findTestObject('Manager Reports/Auto Reports/SearchBtn'))
+WebUI.click(findTestObject('Manager Reports/Auto Reports/CarNotNormalReport'))
 
 WebUI.delay(5)
+
+WebUI.click(findTestObject('Manager Reports/Auto Reports/Car Not Normal/Button_Search'))
 
 CustomKeywords.'com.reports.accountreports.CommonUtils.DismissUnnecessaryNotification'()
 
-WebUI.selectOptionByValue(findTestObject('Manager Reports/Auto Reports/ShowDropdown'), '-1', false)
+CustomKeywords.'com.managerreports.autoreports.CarNotNormal.verifySearch'()
 
-WebUI.delay(5)
-
-CustomKeywords.'com.managerreports.autoreports.CarMissingPrices.verifyFilter'([findTestObject('Manager Reports/Auto Reports/StatusDropdown')
-        , findTestObject('Manager Reports/Auto Reports/SearchBtn')])
+WebUI.closeBrowser()
 
