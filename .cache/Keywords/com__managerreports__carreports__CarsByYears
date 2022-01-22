@@ -1,0 +1,35 @@
+{
+  "keywordFileContentHash": "D0DCF9501ADD4A2467E880F5CA48FCE0",
+  "keywordClasses": [
+    {
+      "name": "com.managerreports.carreports.CarsByYears",
+      "keywordMethods": [
+        {
+          "name": "verifyTextinRows",
+          "parameters": [],
+          "javadoc": "/**\r\n\t * Verify visibility of given text in all rows\r\n\t *\r\n\t */"
+        },
+        {
+          "name": "verifyShowEntry",
+          "parameters": [
+            {
+              "name": "rowCount",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "int",
+                "unresolvedClassName": "int",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * Verify Show Entries\r\n\t */"
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
