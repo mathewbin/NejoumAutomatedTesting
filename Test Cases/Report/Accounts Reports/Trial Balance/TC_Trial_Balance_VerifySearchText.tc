@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_Trial_Balance_VerifySearchText</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d6079dae-15ae-48c6-b1c4-7ce0d907df0d</testCaseGuid>
+   <variable>
+      <defaultValue>'Revenue'</defaultValue>
+      <description></description>
+      <id>0e02055b-3029-4f10-bffa-9e7005523b26</id>
+      <masked>false</masked>
+      <name>Text</name>
+   </variable>
+</TestCaseEntity>

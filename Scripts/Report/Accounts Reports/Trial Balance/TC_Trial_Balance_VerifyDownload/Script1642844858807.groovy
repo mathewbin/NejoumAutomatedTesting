@@ -17,5 +17,27 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-CustomKeywords.'com.reports.accountreports.DwpReport.VerifyingOrder'()
+WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Email'), GlobalVariable.UserName)
+
+WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Password'), GlobalVariable.Password)
+
+WebUI.click(findTestObject('LoginPage/Btn_Login'))
+
+CustomKeywords.'com.reports.accountreports.CommonUtils.DismissUnnecessaryNotification'()
+
+WebUI.click(findTestObject('HomePage/Report'))
+
+WebUI.mouseOver(findTestObject('HomePage/Report-Daily Arrived Containers'))
+
+WebUI.scrollToElement(findTestObject('HomePage/Report-Account Report'), 0)
+
+WebUI.click(findTestObject('HomePage/Report-Account Report'))
+
+WebUI.click(findTestObject('HomePage/Account Report - Trial_Balance'))
+
+WebUI.click(findTestObject('Report/Account Reports/StatementOfCarsArriving/ExcelButton'))
+
+WebUI.delay(5)
+
+CustomKeywords.'com.reports.accountreports.TrialBalance.verifyTextFileData'('Trial Balance.xlsx')
 

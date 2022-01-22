@@ -1,8 +1,8 @@
 {
-  "keywordFileContentHash": "C288A68F08E7510CD3688CA91C235EC6",
+  "keywordFileContentHash": "D029EABFE810CAD3A30173DF7A9D858D",
   "keywordClasses": [
     {
-      "name": "com.managerreports.autoreports.CarNotNormal",
+      "name": "com.reports.accountreports.TrialBalance",
       "keywordMethods": [
         {
           "name": "verifyTextFileData",
@@ -29,9 +29,28 @@
           "javadoc": "/**\r\n\t * Verifying order\r\n\t */"
         },
         {
-          "name": "verifySearch",
+          "name": "verifyTextinRows",
+          "parameters": [
+            {
+              "name": "text",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * Verify visibility of given text in all rows\r\n\t *\r\n\t */"
+        },
+        {
+          "name": "verifyTotal",
           "parameters": [],
-          "javadoc": ""
+          "javadoc": "/**\r\n\t * Verify visibility of given text in all rows\r\n\t *\r\n\t */"
         }
       ]
     }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_Trial_Balance_VerifyDownload</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>9ea97781-8a44-4f21-a120-333b958d73e1</testCaseGuid>
+   <variable>
+      <defaultValue>'MSKU'</defaultValue>
+      <description></description>
+      <id>0af72ea4-6a4e-4fcb-80eb-45819edac8db</id>
+      <masked>false</masked>
+      <name>Text</name>
+   </variable>
+</TestCaseEntity>

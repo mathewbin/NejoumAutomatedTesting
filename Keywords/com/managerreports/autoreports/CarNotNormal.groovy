@@ -167,33 +167,33 @@ public class CarNotNormal {
 			}
 		}
 	}
-	
+
 	/*
-	* Verify Filter
-	*/
-   @Keyword
-   def verifySearch() {
-	   KeywordUtil.logInfo("Verifying Search by Lot Number")
-	   WebDriver webDriver = DriverFactory.getWebDriver()
-	   String input=webDriver.findElement(By.xpath("//td[5]")).text
-	   WebUI.sendKeys(findTestObject("Object Repository/Manager Reports/Auto Reports/Car Not Normal/Input_Search"), input)
-	   WebUI.click(findTestObject("Object Repository/Manager Reports/Auto Reports/Car Not Normal/Button_Search"))
-	   List<WebElement> output=webDriver.findElements(By.xpath("//td[5]"))
-	   for(int i=0;i<output.size();i++) {
-		   if(!output.get(i).text.equals(input))
-			   KeywordUtil.markFailed("Search by Lot Number is failed")
-	   }
-	   
-	   KeywordUtil.logInfo("Verifying Search by VIN")
-	   WebUI.clearText(findTestObject("Object Repository/Manager Reports/Auto Reports/Car Not Normal/Input_Search"))
-	   WebUI.click(findTestObject("Object Repository/Manager Reports/Auto Reports/Car Not Normal/Button_Search"))
-	   input=webDriver.findElement(By.xpath("//td[6]")).text
-	   WebUI.sendKeys(findTestObject("Object Repository/Manager Reports/Auto Reports/Car Not Normal/Input_Search"), input)
-	   WebUI.click(findTestObject("Object Repository/Manager Reports/Auto Reports/Car Not Normal/Button_Search"))
-	   output=webDriver.findElements(By.xpath("//td[6]"))
-	   for(int i=0;i<output.size();i++) {
-		   if(!output.get(i).text.equals(input))
-			   KeywordUtil.markFailed("Search by VIN is failed")
-	   }
-   }
+	 * Verify Filter
+	 */
+	@Keyword
+	def verifySearch() {
+		KeywordUtil.logInfo("Verifying Search by Lot Number")
+		WebDriver webDriver = DriverFactory.getWebDriver()
+		String input=webDriver.findElement(By.xpath("//td[5]")).text
+		WebUI.sendKeys(findTestObject("Object Repository/Manager Reports/Auto Reports/Car Not Normal/Input_Search"), input)
+		WebUI.click(findTestObject("Object Repository/Manager Reports/Auto Reports/Car Not Normal/Button_Search"))
+		List<WebElement> output=webDriver.findElements(By.xpath("//td[5]"))
+		for(int i=0;i<output.size();i++) {
+			if(!output.get(i).text.equals(input))
+				KeywordUtil.markFailed("Search by Lot Number is failed")
+		}
+
+		KeywordUtil.logInfo("Verifying Search by VIN")
+		WebUI.clearText(findTestObject("Object Repository/Manager Reports/Auto Reports/Car Not Normal/Input_Search"))
+		WebUI.click(findTestObject("Object Repository/Manager Reports/Auto Reports/Car Not Normal/Button_Search"))
+		input=webDriver.findElement(By.xpath("//td[6]")).text
+		WebUI.sendKeys(findTestObject("Object Repository/Manager Reports/Auto Reports/Car Not Normal/Input_Search"), input)
+		WebUI.click(findTestObject("Object Repository/Manager Reports/Auto Reports/Car Not Normal/Button_Search"))
+		output=webDriver.findElements(By.xpath("//td[6]"))
+		for(int i=0;i<output.size();i++) {
+			if(!output.get(i).text.equals(input))
+				KeywordUtil.markFailed("Search by VIN is failed")
+		}
+	}
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_Trial_Balance_VerifySorting</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>56921287-a49e-471c-a950-1650d98d716f</testCaseGuid>
+   <variable>
+      <defaultValue>'MSKU'</defaultValue>
+      <description></description>
+      <id>1f5ddc19-dff7-4f12-bace-847efac071b9</id>
+      <masked>false</masked>
+      <name>Text</name>
+   </variable>
+</TestCaseEntity>

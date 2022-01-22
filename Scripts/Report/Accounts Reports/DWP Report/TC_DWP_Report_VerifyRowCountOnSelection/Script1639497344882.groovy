@@ -23,7 +23,7 @@ WebUI.sendKeys(findTestObject('LoginPage/InputTxt_Password'), GlobalVariable.Pas
 
 WebUI.click(findTestObject('LoginPage/Btn_Login'))
 
-CustomKeywords.'com.reports.accountreports.StatementOfCarsArriving.DismissUnnecessaryNotification'()
+CustomKeywords.'com.reports.accountreports.CommonUtils.DismissUnnecessaryNotification'()
 
 WebUI.click(findTestObject('HomePage/Report'))
 
@@ -37,5 +37,6 @@ WebUI.click(findTestObject('HomePage/Account Report - DWP_Report'))
 
 WebUI.selectOptionByValue(findTestObject('Report/Account Reports/DWPReport/ShowDropdown'), RowCount, false)
 
-CustomKeywords.'com.reports.accountreports.DwpReport.verifyShowEntry'(findTestObject('Report/Account Reports/DWPReport/ShowDropdown'), RowCount)
+CustomKeywords.'com.reports.accountreports.DwpReport.verifyShowEntry'(findTestObject('Report/Account Reports/DWPReport/ShowDropdown'), 
+    RowCount)
 

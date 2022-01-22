@@ -33,9 +33,15 @@ WebUI.scrollToElement(findTestObject('HomePage/Report-Account Report'), 0)
 
 WebUI.click(findTestObject('HomePage/Report-Account Report'))
 
-WebUI.click(findTestObject('HomePage/Account Report - DWP_Report'))
+WebUI.click(findTestObject('HomePage/Account Report - Trial_Balance'))
 
 WebUI.delay(5)
 
-CustomKeywords.'com.reports.accountreports.DwpReport.VerifyingOrder'()
+CustomKeywords.'com.reports.accountreports.TrialBalance.verifyTotal'()
+
+WebUI.setText(findTestObject('Report/Account Reports/DWPReport/SearchInputTxt'), Text)
+
+WebUI.delay(2)
+
+CustomKeywords.'com.reports.accountreports.TrialBalance.verifyTextinRows'(Text)
 

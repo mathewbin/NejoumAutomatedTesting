@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Input_FromDate</name>
+   <tag></tag>
+   <elementGuidId>eebf5bf5-1bdb-40df-a2ab-33838a57c35f</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>input#date_from</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>input#date_from</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>CSS</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>
